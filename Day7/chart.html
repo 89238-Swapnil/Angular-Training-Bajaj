@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Data Visualizer</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafc;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    input[type="file"] {
+      margin: 10px 0;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    canvas {
+      margin-top: 30px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Data Visualizer</h1>
+
+    <input type="file" id="fileInput" accept=".csv" />
+    <br>
+
+    <button id="barBtn">Generate Bar Chart</button>
+    <button id="pieBtn">Generate Pie Chart</button>
+
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script>
+    let realEstateData = [];
+    let chartInstance = null;
+
+    
+    function parseCSV(content) {
+      const rows = content.trim().split("\n");
+      const headers = rows[0].split(",");
+      return rows.slice(1).map(row => {
+        const values = row.split(",");
+        let obj = {};
+        headers.forEach((h, i) => obj[h.trim()] = values[i]?.trim());
+        return obj;
+      });
+    }
+
+    
+    document.getElementById('fileInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        realEstateData = parseCSV(event.target.result);
+        alert("uploaded successfully!");
+      };
+      reader.readAsText(file);
+    });
+
+    function resetChart() {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+    }
+
+   
+    document.getElementById('barBtn').addEventListener('click', () => {
+      if (!realEstateData.length) return alert("Upload CSV first!");
+
+      resetChart();
+
+      const propertyNames = realEstateData.map(d => d.Property_Name);
+      const prices = realEstateData.map(d => parseFloat(d["Price(INR_Lakhs)"]) || 0);
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: propertyNames,
+          datasets: [{
+            label: 'Price (in Lakhs)',
+            data: prices,
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: '#007bff',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: { y: { beginAtZero: true } },
+        }
+      });
+    });
+
+   
+    document.getElementById('pieBtn').addEventListener('click', () => {
+      if (!realEstateData.length) return alert("Upload CSV first!");
+
+      resetChart();
+
+      const statusCounts = { "Ready to Move": 0, "Under Construction": 0 };
+      realEstateData.forEach(d => {
+        const status = d.Status || "Unknown";
+        if (statusCounts[status] !== undefined) {
+          statusCounts[status]++;
+        }
+      });
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: Object.keys(statusCounts),
+          datasets: [{
+            data: Object.values(statusCounts),
+            backgroundColor: ['#28a745', '#ffc107']
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'bottom' } }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

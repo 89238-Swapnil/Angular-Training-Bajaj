@@ -1,0 +1,118 @@
+
+<style type="text/css">
+
+*{ list-style-type:none; font-family: Gill sans;}
+
+li {float: left;}
+#wrapper {
+  width:300px;
+  height:50px;
+  background: rgb(241, 241, 241);
+  margin: 250px auto;
+  border-radius:5px/10px;
+}
+
+#equaliser {
+  width: 30px;
+  height: 50px;
+  position: relative;
+  bottom:10px;
+}
+.bar {
+  float:left;
+  width: 7px;
+  height: 10px;
+  background:red;
+  position: absolute;
+  bottom:0;
+}
+
+.first { 
+  left: 7px;
+  -webkit-animation: firstBar  1s infinite;
+}
+.second { 
+  left: 21px; 
+  -webkit-animation: secondBar  1s infinite;
+}
+fghjhg
+.third { 
+  left: 35px; 
+  -webkit-animation: thirdBar  1s infinite;
+}
+
+@-webkit-keyframes firstBar {
+  0%   { height: 10px; }
+  50%  { height: 30px; }
+  100% { height: 10px; }
+}
+
+@-webkit-keyframes secondBar {
+  0%   { height: 30px; }
+  50%  { height: 10px; }
+  100% { height: 30px; }
+}
+
+@-webkit-keyframes thirdBar {
+  0%   { height: 20px; }
+  40%  { height: 10px; }
+  60%  { height: 30px; }
+  100% { height: 20px; }
+}
+
+#music li{ font-size: 25px; color:rgb(41,41, 41);}
+#music .time {margin-left:67px;}
+</style>
+
+<div id="wrapper"> 
+  <li id="equaliser">
+    <div class="bar first">
+    </div>
+    <div class="bar second">
+    </div>
+    <div class="bar third">
+    </div>
+  </li><!-- /equaliser -->
+  <li id="music">
+    <ul>
+      <li class="tune">Start Now</li>
+      <li class="time">5:57</li>
+    </ul>
+  </li><!-- /music -->
+</div>
+
+draw an circle and apply animanition to move the circle from left to right and change color of it 
+
+<!DOCTYPE html>
+ <html lang="en">   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style type="text/css">
+            #circle {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                border-radius: 50%;
+                position: relative;
+                animation: moveAndChangeColor 4s infinite;
+            }
+    
+            @keyframes moveAndChangeColor {
+                0% {
+                    left: 0;
+                    background-color: red;
+                }
+                50% {
+                    left: 200px;
+                    background-color: blue;
+                }
+                100% {
+                    left: 0;
+                    background-color: red;
+                }
+            }
+        </style>
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Salary Slip</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f5;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #0e3763;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 420px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      background-color: #0e3763;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .salary-container {
+      background: #fff;
+      border-radius: 10px;
+      width: 85%;
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #0e3763;
+      color: white;
+    }
+    caption {
+      caption-side: top;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #0e3763;
+    }
+    .summary {
+      margin-top: 20px;
+      border-top: 2px solid #0e3763;
+      padding-top: 10px;
+      font-weight: bold;
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .flex table {
+      width: 48%;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function calculateSalary() {
+      let name = document.getElementById("empName").value;
+      let empId = document.getElementById("empId").value;
+      let email = document.getElementById("empEmail").value;
+      let baseSalary = parseFloat(document.getElementById("baseSalary").value);
+
+      if (!name || !empId || !email || isNaN(baseSalary)) {
+        alert("Please fill all fields correctly!");
+        return;
+      }
+
+      // Earnings
+      let ta = baseSalary * 0.10;
+      let da = baseSalary * 0.20;
+      let hra = baseSalary * 0.50;
+      let bonus = baseSalary * 0.06;
+      let ca = baseSalary * 0.03;
+      let cea = baseSalary * 0.01;
+      let other = baseSalary * 0.02;
+
+      // Deductions
+      let epf = baseSalary * 0.02;
+
+      let grossSalary = baseSalary + ta + da + hra + bonus + ca + cea + other;
+      let totalDeduction = epf;
+      let netSalary = grossSalary - totalDeduction;
+
+      document.getElementById("salarySlip").innerHTML = `
+      <div class="salary-container">
+        <caption>Salary Slip</caption>
+        <p><strong>Employee Name:</strong> ${name}</p>
+        <p><strong>Employee ID:</strong> ${empId}</p>
+        <p><strong>Email:</strong> ${email}</p>
+
+        <div class="flex">
+          <table>
+            <caption>Earnings</caption>
+            <tr><th>Description</th><th>Amount ($)</th></tr>
+            <tr><td>Base Salary</td><td>${baseSalary.toFixed(2)}</td></tr>
+            <tr><td>TA (10%)</td><td>${ta.toFixed(2)}</td></tr>
+            <tr><td>DA (20%)</td><td>${da.toFixed(2)}</td></tr>
+            <tr><td>HRA (50%)</td><td>${hra.toFixed(2)}</td></tr>
+            <tr><td>Bonus (6%)</td><td>${bonus.toFixed(2)}</td></tr>
+            <tr><td>CA (3%)</td><td>${ca.toFixed(2)}</td></tr>
+            <tr><td>CEA (1%)</td><td>${cea.toFixed(2)}</td></tr>
+            <tr><td>Other (2%)</td><td>${other.toFixed(2)}</td></tr>
+          </table>
+
+          <table>
+            <caption>Deductions</caption>
+            <tr><th>Description</th><th>Amount ($)</th></tr>
+            <tr><td>EPF (2%)</td><td>${epf.toFixed(2)}</td></tr>
+          </table>
+        </div>
+
+        <div class="summary">
+          <p>Gross Salary: $${grossSalary.toFixed(2)}</p>
+          <p>Total Deductions: $${totalDeduction.toFixed(2)}</p>
+          <p><strong>Net Salary (After Deductions): $${netSalary.toFixed(2)}</strong></p>
+        </div>
+      </div>`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Employee Salary Calculator</h1>
+
+  <form>
+    <label for="empName">Employee Name:</label>
+    <input type="text" id="empName" placeholder="Enter employee name">
+
+    <label for="empId">Employee ID:</label>
+    <input type="text" id="empId" placeholder="Enter employee ID">
+
+    <label for="empEmail">Email:</label>
+    <input type="email" id="empEmail" placeholder="Enter employee email">
+
+    <label for="baseSalary">Base Salary:</label>
+    <input type="number" id="baseSalary" placeholder="Enter base salary">
+
+    <button type="button" onclick="calculateSalary()">Generate Salary Slip</button>
+  </form>
+
+  <div id="salarySlip"></div>
+</body>
+</html>

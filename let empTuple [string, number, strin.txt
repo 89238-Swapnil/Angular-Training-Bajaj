@@ -1,0 +1,291 @@
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+empTuple = [] as unknown as [string, number, string];
+console.log(empTuple);
+
+
+
+
+
+
+enum CardinalDirections {
+  North = 'North',
+  East = "East",
+  South = "South",
+  West = "West"
+};
+// logs "North"
+console.log(CardinalDirections.North);
+// logs "West"
+console.log(CardinalDirections.West);
+
+
+
+
+
+
+
+
+
+enum StatusCodes {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400
+}
+// logs 404
+console.log(StatusCodes.NotFound);
+// logs 200
+console.log(StatusCodes.Success);
+
+
+
+
+
+
+
+
+enum CardinalDirections {
+  North = 1,
+  East,
+  South,
+  West
+}
+// logs 1
+console.log(CardinalDirections.North);
+// logs 4
+console.log(CardinalDirections.West);
+
+
+
+
+
+
+
+An enum is a special "class" that represents a group of constants (unchangeable variables).
+Enums come in two flavors string and numeric.
+
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+}
+let currentDirection = CardinalDirections.North;
+// logs 0
+console.log(currentDirection);
+
+
+
+
+
+
+
+let tuple_name = [val1, val2, val3, ...val n];  
+
+
+let arrTuple: [number, string, number, string] = [501, "welcome", 505, "eshan"];
+console.log(arrTuple);
+
+Declaration and Initialization
+
+let arrTuple: [number, number, string, string] = [] as [number, number, string, string];   
+arrTuple[0] = 501;
+arrTuple[1] = 506;
+arrTuple[2] = "hello";
+arrTuple[3] = "world";
+console.log(arrTuple);
+
+
+
+Accessing Tuple Elements
+
+
+var employee: [number, string] = [1, "Steve"];
+employee[0];
+employee[1];
+
+
+Heterogeneous Data Types in Tuples
+
+
+let empTuple: [string, number, string] = ["Vivek", 22, "Honesty"];
+console.log("Name of the Employee is: " + empTuple[0]);
+console.log("Age of the Employee is: " + empTuple[1]);
+console.log(empTuple[0] + " is known for " + empTuple[2]);
+
+
+
+
+Operations on Tuples
+
+
+1. Push Operation
+The push() method adds elements to the tuple.
+
+
+var employee: [number, string] = [1, "Steve"];
+employee.push(2, "Bill"); 
+console.log(employee); 
+
+2. Pop Operation
+
+
+let empTuple: [string, number, string, number] = ["Mohit", 25, "typescript", 10001];
+console.log("Items: " + empTuple);
+empTuple.pop();
+console.log("Length of Tuple Items after pop: " + empTuple.length);
+console.log("Items: " + empTuple);
+
+
+Update or Modify Tuple Elements
+
+
+let empTuple: [string, number, string] = ["Ganesh", 25, "TCS"];
+empTuple[1] = 60;
+console.log("Name of the Employee is: " + empTuple[0]);
+console.log("Age of the Employee is: " + empTuple[1]);
+console.log(empTuple[0] + " is working in " + empTuple[2]);
+
+Clear Tuple Fields
+
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+empTuple = [] as [string, number, string];
+console.log(empTuple);
+
+Destructuring Tuples
+	
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+let [name, age] = empTuple;
+console.log(name);
+console.log(age);
+
+Passing Tuples to Functions
+
+let empTuple: [string, number, string] = ["typescript", 101, "rajesh"];
+
+function display(tuple_values: any[]) {
+  for (let i = 0; i < tuple_values.length; i++) {
+    console.log(tuple_values[i]);
+  }
+}
+
+display(empTuple);
+
+
+
+
+
+
+
+
+let numbers: number[] = [1, 2, 3]
+let strings: Array<number> = [1, 2, 3]
+
+interface User {
+  id: number
+  name: string
+}
+
+let users: User[] = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' }
+]
+
+
+let numbers: number[] = [1, 2, 3]
+numbers.push(4) // numbers is now [1, 2, 3, 4]
+
+
+
+let numbers: number[] = [1, 2, 3]
+let hasTwo = numbers.includes(2) // returns true
+let hasTwo = numbers.includes(4) // returns false
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let squares = numbers.map((x) => x * x) // [1, 4, 9, 16]
+
+
+let numbers: number[] = [1, 2, 3, 4]
+numbers.splice(2, 1) // Removes 1 element at index 2, numbers is now [1, 2, 4]
+
+
+let numbers: number[] = [2, 1, 4, 3]
+numbers.sort((a, b) => a - b) // numbers is now [1, 2, 3, 4];
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let found = numbers.find((x) => x > 1) // returns 2
+
+
+
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let even = numbers.filter((x) => x % 2 === 0) // [2, 4]
+
+
+let zeroes = new Array(5).fill(0) // [0, 0, 0, 0, 0]
+
+
+
+let numbers: number[] = [1, 2, 3, 4]
+numbers.forEach((number) => console.log(number)) // this will output each number in sequence
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let length = numbers.length // returns 4
+
+
+let emptyArray: number[] = []
+
+
+----------
+
+const fruits = [];
+fruits.push("banana", "apple", "peach");
+console.log(fruits.length); // 3
+
+fruits[5] = "mango";
+console.log(fruits[5]); // 'mango'
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 6
+
+
+
+fruits.length = 10;
+console.log(fruits); // ['banana', 'apple', 'peach', empty x 2, 'mango', empty x 4]
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 10
+console.log(fruits[8]); // undefined
+
+fruits.length = 2;
+console.log(Object.keys(fruits)); // ['0', '1']
+console.log(fruits.length); // 2
+
+const colors = ["red", "yellow", "blue"];
+colors[5] = "purple";
+colors.forEach((item, index) => {
+  console.log(`${index}: ${item}`);
+});
+
+colors.reverse(); // ['purple', empty × 2, 'blue', 'yellow', 'red']
+
+
+
+const colors = ["red", "yellow", "blue"];
+colors[5] = "purple";
+const iterator = colors.keys();
+for (const key of iterator) {
+  console.log(`${key}: ${colors[key]}`);
+}
+// Output
+// 0: red
+// 1: yellow
+// 2: blue
+// 3: undefined
+// 4: undefined
+// 5: purple
+
+const newColors = colors.toReversed(); // ['purple', undefined, undefined, 'blue', 'yellow', 'red']
+

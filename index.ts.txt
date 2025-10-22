@@ -1,0 +1,29 @@
+//index.ts
+
+import { LibClass } from './my-library.js';  
+
+let lib = new LibClass;
+console.log(lib.foo());
+
+
+
+
+//my-library.js
+export class LibClass {
+    foo() {
+        return 'bar';
+    }
+}
+
+
+
+
+
+//my-library.d.ts
+export declare class LibClass {
+    foo(): string;
+}
+
+
+
+

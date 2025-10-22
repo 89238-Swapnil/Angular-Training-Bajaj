@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Records</title>
+  
+</head>
+<body>
+  <h2>Employee Records</h2>
+  <button id="loadBtn">Fetch Employee Data</button>
+
+  <table id="employeeTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary (₹)</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    document.getElementById("loadBtn").addEventListener("click", () => {
+      fetch('employees.json')
+        .then(response => response.json())
+        .then(data => {
+          const employees = data.employees;
+          console.log("Fetched Employees:", employees);
+
+          const tableBody = document.getElementById("tableBody");
+          tableBody.innerHTML = "";
+          document.getElementById("employeeTable").style.display = "table";
+
+          employees.forEach(emp => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${emp.id}</td>
+              <td>${emp.name}</td>
+              <td>${emp.salary}</td>
+            `;
+            tableBody.appendChild(row);
+
+
+          });
+        })
+        .catch(err => console.error("Error loading data:", err));
+    });
+
+    var frd_list=[32,45,68,32,50]
+
+    for(let i=0;i<frd_list.length;i++){
+        console.log(frd_list[i]);
+
+    }
+
+    var nums=[23,45,67,89,12,34,56,78,90    ]
+
+    nums.map(num=>console.log(num));
+
+    nums.map(num=>{
+        console.log("num:"+num);
+        num+=10;
+        console.log("num after adding 10:"+num);
+    })
+
+    var name=prompt("Enter your name:");
+    console.log(empRecords.filter(rec=>rec.name==name));    
+  </script>
+</body>
+</html>

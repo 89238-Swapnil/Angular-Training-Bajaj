@@ -1,0 +1,133 @@
+1	What are the possible ways to create objects in JavaScript
+2	What is a prototype chain           
+3	What is method
+6	What is the purpose of the array splice method
+7	What is the difference between slice and splice
+8	How do you compare Object and Map
+9	What is the difference between == and === operators
+10	What are lambda expressions or arrow functions
+11	What is a first class function
+12	What is a first order function
+13	What is a higher order function
+14	What is a unary function
+15	What is the currying function
+16	What is a pure function
+17	What are the benefits of pure functions
+18	What is the purpose of the let keyword
+19	What is the difference between let and var
+20	What is the reason to choose the name let as a keyword
+21	How do you redeclare variables in a switch block without an error
+22	What is the Temporal Dead Zone
+23	What is an IIFE (Immediately Invoked Function Expression)
+24	How do you decode or encode a URL in JavaScript?
+25	What is memoization
+26	What is Hoisting
+27	What are classes in ES6
+28	What are closures
+29	What are modules
+30	Why do you need modules
+31	What is scope in javascript
+32	What is a service worker
+33	How do you manipulate DOM using a service worker
+34	How do you reuse information across service worker restarts
+35	What is IndexedDB
+36	What is web storage
+37	What is a post message
+38	What is a Cookie
+39	Why do you need a Cookie
+40	What are the options in a cookie
+41	How do you delete a cookie
+42	What are the differences between cookie, local storage and session storage
+43	What is the main difference between localStorage and sessionStorage
+44	How do you access web storage
+45	What are the methods available on session storage
+46	What is a storage event and its event handler
+47	Why do you need web storage
+48	How do you check web storage browser support
+49	How do you check web workers browser support
+50	Give an example of a web worker
+
+
+What are the possible ways to create objects in JavaScript
+
+1️⃣ Object Literal (most common)
+The simplest way to create an object using {}.
+const obj = {
+  name: "Alice",
+  age: 25,
+  greet() {
+    console.log("Hello " + this.name);
+  }
+};
+
+obj.greet(); // Hello Alice
+
+
+Using new Object()
+Creates an object using the built-in Object constructor.
+const obj = new Object();
+obj.name = "Bob";
+obj.age = 30;
+obj.greet = function () {
+  console.log("Hello " + this.name);
+};
+
+Constructor Function
+
+A function used as a “class” before ES6 classes.
+
+function Employee(name, salary) {
+  this.name = name;
+  this.salary = salary;
+  this.greet = function () {
+    console.log("Hello " + this.name);
+  };
+}
+
+const emp1 = new Employee("Sara", 40000);
+emp1.greet(); // Hello Sara
+
+2.What is a prototype chain      
+     In JavaScript, every object has a hidden link to another object called its prototype.
+
+This prototype object can have properties and methods.
+
+If you try to access a property on an object and it doesn’t exist, JS will look up the prototype to find it.
+
+
+
+2.Prototype Chain
+The prototype chain is the chain of objects that JavaScript follows to resolve a property or method.
+
+Each object has an internal property [[Prototype]] (accessible via __proto__ or Object.getPrototypeOf(obj)).
+
+If a property isn’t found in the object itself, JS looks in its prototype, then the prototype’s prototype, and so on until it reaches Object.prototype.
+
+If the property is still not found, it returns undefined.
+
+...............................................................
+
+3.What is method
+method is just a function that is a property of an object.
+
+In other words, when a function is attached to an object (or class), we call it a method.
+
+Methods usually operate on the data (properties) of the object they belong to using this.
+const person = {
+  name: "Alice",
+  age: 25,
+  greet: function() {         // this is a method
+    console.log("Hello, " + this.name);
+  }
+};
+
+person.greet(); // Hello, Alice
+........................................................
+
+4.	What is a prototype chain
+
+In JavaScript, every object has a hidden link to another object, called its prototype.
+
+This prototype object can contain properties and methods.
+
+If you try to access a property on an object and it doesn’t exist, JavaScript will look up the prototype chain to find it

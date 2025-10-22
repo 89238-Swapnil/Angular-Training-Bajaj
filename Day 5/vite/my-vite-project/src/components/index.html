@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App with Sass Mixins</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="centered-container">
+        <header>
+            <h1 class="heading-text">Welcome to Vite + Sass</h1>
+            <p class="body-text">This project demonstrates Sass mixins usage</p>
+        </header>
+
+        <nav class="nav-container">
+            <button class="primary-btn">Primary Button</button>
+            <button class="secondary-btn">Secondary Button</button>
+            <button class="danger-btn">Danger Button</button>
+        </nav>
+
+        <main class="main-content">
+            <div class="card-component">
+                <h2>Card Title 1</h2>
+                <p>This is a card using the card mixin with hover effects.</p>
+                <button class="primary-btn">Learn More</button>
+            </div>
+
+            <div class="card-component">
+                <h2>Card Title 2</h2>
+                <p>Another card demonstrating reusable mixin styles.</p>
+                <button class="secondary-btn">Get Started</button>
+            </div>
+
+            <div class="card-component">
+                <h2>Card Title 3</h2>
+                <p>Third card showing consistent styling with mixins.</p>
+                <button class="danger-btn">Delete</button>
+            </div>
+        </main>
+
+        <footer>
+            <p class="body-text">Built with Vite and Sass Mixins</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1183 @@
+{
+    "compilerOptions": {
+      /* Basic Options */
+      "target": "es6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+      "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+      "lib": ["es6"],                           /* Specify library files to be included in the compilation. */
+      // "allowJs": true,                       /* Allow javascript files to be compiled. */
+      // "checkJs": true,                       /* Report errors in .js files. */
+      // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+      // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
+      // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
+      "sourceMap": true,                        /* Generates corresponding '.map' file. */
+      // "outFile": "./",                       /* Concatenate and emit output to single file. */
+      "outDir": "build",                         /* Redirect output structure to the directory. */
+      // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+      // "composite": true,                     /* Enable project compilation */
+      // "removeComments": true,                /* Do not emit comments to output. */
+      // "noEmit": true,                        /* Do not emit outputs. */
+      // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
+      // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
+      // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+  
+      /* Strict Type-Checking Options */
+      "strict": true,                           /* Enable all strict type-checking options. */
+      // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+      // "strictNullChecks": true,              /* Enable strict null checks. */
+      // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+      // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+      // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+      // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+      // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+  
+      /* Additional Checks */
+      // "noUnusedLocals": true,                /* Report errors on unused locals. */
+      // "noUnusedParameters": true,            /* Report errors on unused parameters. */
+      // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+      // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+  
+      /* Module Resolution Options */
+      "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+      // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+      // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+      // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
+      // "typeRoots": [],                       /* List of folders to include type definitions from. */
+      // "types": [],            /* Type declaration files to be included in compilation. */
+      // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+      "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+      // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+  
+      /* Source Map Options */
+      // "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+      // "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */
+      // "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. */
+      // "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+  
+      /* Experimental Options */
+      "experimentalDecorators": true,           /* Enables experimental support for ES7 decorators. */
+      "emitDecoratorMetadata": true             /* Enables experimental support for emitting type metadata for decorators. */
+    },
+    "include": [
+      "src/**/*.ts"
+    ], 
+    "exclude": [
+      "node_modules",
+      ".vscode"
+    ]
+  }
+  
+  
+  
+  
+
+
+
+1. Design and implement a Banking Application using Object-Oriented Programming (OOP) principles such as encapsulation, inheritance, abstraction, and polymorphism. 
+The system should manage bank customers, their accounts, and various types of transactions like deposits, withdrawals, and transfers.
+
+The application should simulate the core operations of a real-world bank, enforcing business rules (e.g., minimum balance for savings accounts,
+overdraft limits for checking accounts) while maintaining a clean and extendable codebase using OOP best practices.
+
+User and Account Management
+Each user can have one or more bank accounts.
+Account types:
+SavingsAccount (with minimum balance rule)
+
+CheckingAccount (with optional overdraft facility)
+
+2. Core Classes
+You are expected to design the following (and possibly more) classes:
+Bank
+Responsible for creating and managing user accounts and transactions.
+Customer
+Stores customer information like name, ID, and their list of accounts.
+BankAccount (abstract class or interface)
+Common base for all account types.
+Includes:
+accountNumber
+balance
+deposit()
+withdraw()
+getBalance()
+
+SavingsAccount (inherits BankAccount)
+
+Enforces a minimum balance.
+
+CheckingAccount (inherits BankAccount)
+
+Allows overdrafts up to a limit.
+
+Transaction
+
+Records details of a transaction: type, amount, date, involved accounts.
+
+3. Transactions
+
+Deposit: Add funds to an account.
+
+Withdraw: Remove funds if rules allow (e.g., no overdraft on savings).
+
+Transfer: Move funds between two accounts.
+
+All transactions should be logged per account.
+
+4. Error Handling
+
+Throw or handle errors for:
+
+Insufficient balance
+
+Invalid account number
+
+Overdraft limit exceeded
+
+5. OOP Concepts to Apply
+
+Encapsulation: Keep internal details private and expose public methods.
+
+Inheritance: SavingsAccount and CheckingAccount inherit from BankAccount.
+
+Polymorphism: Perform actions like withdraw() on an account without knowing its exact type.
+
+Abstraction: Hide complex logic inside well-defined interfaces/classes.
+
+🧪 Optional Features (For Advanced Implementation)
+
+Transaction history filtering (by date or type)
+
+Interest calculation for savings accounts
+
+Authentication system for users (login, password)
+
+JSON or file-based data persistence
+
+UI with command-line or simple frontend (optional)
+
+📁 Sample Folder Structure
+banking-app/
+├── src/
+│   ├── models/
+│   │   ├── Customer.ts
+│   │   ├── BankAccount.ts
+│   │   ├── SavingsAccount.ts
+│   │   ├── CheckingAccount.ts
+│   │   └── Transaction.ts
+│   ├── services/
+│   │   └── Bank.ts
+│   └── index.ts
+├── tests/
+│   └── Bank.test.ts
+├── tsconfig.json
+└── README.md
+
+
+
+
+
+
+
+
+
+https://wayground.com/join?gc=355007
+
+
+
+
+
+
+
+
+
+class class_name {
+    ...
+}
+
+interface interface_name {
+    ...
+}
+
+Classes
+
+
+class Car {
+  model: string;
+  year: number;
+  price: string;
+
+  drive() {
+    console.log('The Car has Started driving');
+  }
+
+  stop() {
+    console.log('The car has stopped');
+  }
+  
+}
+
+
+const tesla = new Car();
+
+tesla.model= "Model X"
+tesla.year= 2022
+tesla.price="200000"
+tesla.drive()
+tesla.stop()
+
+
+
+class Greeter {
+  greeting: string;
+ 
+  constructor(message: string) {
+    this.greeting = message;
+  }
+ 
+  greet() {
+    return "Hello, " + this.greeting;
+  }
+}
+ 
+let greeter = new Greeter("world");
+
+
+
+Generic Classes
+
+
+class Vehicle<Type> {
+  contents: Type;
+  constructor(value: Type) {
+    this.contents = value;
+  }
+}
+ 
+// car: Vehicle<string>
+const car = new Vehicle("BMV");
+// carList: Vehicle<string[]>
+const carList = new Vehicle(["BMV","Audi"]);
+// serialNumbers: Vehicle<number>
+const serialNumbers = new Vehicle(12345);
+// carAndSerialNumbers: Vehicle<{
+// serialNumbers: number;
+//  carName: string;
+//}[]>
+const carAndSerialNumbers = new Vehicle([
+  {serialNumbers:1233,carName:"BMV"},
+  {serialNumbers:1233,carName:"Audi"}
+]);
+
+Constructor Functions
+
+
+class A {
+  variable: string;
+
+  constructor(variable: string){
+    this.variable = variable
+  }
+}
+
+const object = new A('value')
+
+Setters and Getters
+
+class A {
+  private _variable: string;
+
+  constructor(variable:string){
+    this._variable = variable;
+  }
+
+  get variable(): string {
+    return this._variable;
+  }
+
+  set variable(value: string) {
+    if(value === '') throw new Error("Variable cannot be an empty string");
+    this._variable = value;
+  }
+}
+
+const object = new A('string')
+
+//setting the variable
+object.variable = 'different string'
+
+//getting the variable
+console.log(object.variable)
+
+
+
+
+Encapsulation
+
+Access Modifiers
+An access modifier is a keyword that changes the accessibility of a property or method in a class.
+
+There are three primary access modifiers in TypeScript:
+
+public: This is the default visibility of every class property. A public property is accessible outside the class.
+private: A property prefixed with the private keyword can’t be accessed anywhere outside the class and cannot be inherited by a subclass.
+protected: The protected access modifier is very similar to the private access modifier with one key difference. 
+						Properties marked with the protected keyword are visible and can be inherited by a subclass.
+In addition to the main three, TypeScript has two more access modifiers:
+
+static: Properties or methods prefixed with static can only be accessed directly on the class and not on an object instantiated from the class. They also can’t be inherited.
+
+class Animal {
+  private name: string;
+  constructor(theName: string) {
+    this.name = theName;
+  }
+}
+ 
+class Rhino extends Animal {
+  constructor() {
+    super("Rhino");
+  }
+}
+ 
+class Employee {
+  private name: string;
+  constructor(theName: string) {
+    this.name = theName;
+  }
+}
+ 
+let animal = new Animal("Goat");
+let rhino = new Rhino();
+let employee = new Employee("Bob");
+ 
+animal = rhino;
+animal = employee;
+
+
+
+
+Protected
+
+
+class Person {
+  protected name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+ 
+class Employee extends Person {
+  private department: string;
+ 
+  constructor(name: string, department: string) {
+    super(name);
+    this.department = department;
+  }
+ 
+  public getElevatorPitch() {
+    return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+ 
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch());
+console.log(howard.name);
+
+
+static
+class A {
+  static index: number = 1;
+};
+
+A.index; // 1
+
+
+READONLY
+
+class Octopus {
+  readonly name: string;
+  readonly numberOfLegs: number = 8;
+ 
+  constructor(theName: string) {
+    this.name = theName;
+  }
+}
+ 
+let dad = new Octopus("Man with the 8 strong legs");
+dad.name = "Man with the 3-piece suit";
+
+Parameter properties
+
+
+
+class Octopus {
+  readonly numberOfLegs: number = 8;
+  constructor(readonly name: string) {}
+}
+ 
+let dad = new Octopus("Man with the 8 strong legs");
+dad.name;
+
+
+
+Inheritance
+
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name:string, age:number){
+    this.name = name;
+    this.age = age;
+  }
+
+  eat() {
+    console.log(`What's for dinner?`);
+  }
+
+  speak() {
+    console.log(`My name is ${this.name}, I am ${this.age} years old`);
+  }
+}
+
+
+class Chef extends Person {
+  occupation: string;
+
+  constructor(name:string, age:number, occupation: string){
+    super(name, age)
+    this.occupation = occupation;
+  }
+  
+  speak(): void {
+    console.log(`I am a ${this.occupation}`);
+  }
+
+  cook() {
+    console.log(`I am cooking`);
+  }
+}
+
+
+class Animal {
+  move(distanceInMeters: number = 0) {
+    console.log(`Animal moved ${distanceInMeters}m.`);
+  }
+}
+ 
+class Dog extends Animal {
+  bark() {
+    console.log("Woof! Woof!");
+  }
+}
+ 
+const dog = new Dog();
+dog.bark();
+dog.move(10);
+dog.bark();
+
+Extends vs Implements
+
+
+class Human {
+  name: string;
+  gender: string;
+
+  constructor(name:string, gender:string){
+    this.name = name;
+    this.gender = gender;
+  }
+
+  speak() {
+    return `I am speaking`;
+  }
+}
+
+class Doctor extends Human {
+  name: string;
+  gender: string;
+
+  constructor(name:string, gender:string){
+    this.name = name;
+    this.gender = gender;
+  }
+
+  speak() {
+    return 'I am a doctor';
+  }
+}
+
+
+Overriding and Extending Inherited Properties
+
+
+class A {
+  print() {
+    console.log('I am class A');
+  }
+}
+
+class B extends A {
+  print() {
+    console.log('I am class B');
+  }
+}
+
+
+class B extends A {
+  print() {
+    super.print(); //I am class A
+    console.log('I am class B');
+  }
+}
+
+const object = new B();
+object.print();// I am class A, I am class B
+
+
+Abstract Classes
+
+
+abstract class Animal {
+  abstract makeSound(): void;
+ 
+  move(): void {
+    console.log("roaming the earth...");
+  }
+}
+
+
+abstract class Department {
+  constructor(public name: string) {}
+ 
+  printName(): void {
+    console.log("Department name: " + this.name);
+  }
+ 
+  abstract printMeeting(): void; // must be implemented in derived classes
+}
+ 
+class AccountingDepartment extends Department {
+  constructor() {
+    super("Accounting and Auditing"); // constructors in derived classes must call super()
+  }
+ 
+  printMeeting(): void {
+    console.log("The Accounting Department meets each Monday at 10am.");
+  }
+ 
+  generateReports(): void {
+    console.log("Generating accounting reports...");
+  }
+}
+ 
+let department: Department; // ok to create a reference to an abstract type
+department = new Department(); // error: cannot create an instance of an abstract class
+Cannot create an instance of an abstract class.
+department = new AccountingDepartment(); // ok to create and assign a non-abstract subclass
+department.printName();
+department.printMeeting();
+department.generateReports(); // error: department is not of type AccountingDepartment, cannot access generateReports
+
+
+
+
+
+class Greeter {
+  static standardGreeting = "Hello, there";
+  greeting: string;
+  greet() {
+    if (this.greeting) {
+      return "Hello, " + this.greeting;
+    } else {
+      return Greeter.standardGreeting;
+    }
+  }
+}
+ 
+let greeter1: Greeter;
+greeter1 = new Greeter();
+console.log(greeter1.greet()); // "Hello, there"
+ 
+let greeterMaker: typeof Greeter = Greeter;
+greeterMaker.standardGreeting = "Hey there!";
+ 
+let greeter2: Greeter = new greeterMaker();
+console.log(greeter2.greet()); // "Hey there!"
+ 
+let greeter3: Greeter;
+greeter3 = new Greeter();
+console.log(greeter3.greet()); // "Hey there!"
+
+
+
+
+abstract class Car {
+  abstract printCarName(): void;
+}
+// Error: Cannot create an instance of an abstract class.
+const car = new Car();
+
+class Bmv extends Car {
+  printCarName(): void {
+    console.log("BMV")
+  }
+
+}
+
+const bmv = new Bmv();
+//Output: BMV
+bmv.printCarName();
+
+
+Polymorphism
+
+
+class A {
+  name: string = "Class A"
+
+  print(){
+    console.log('I am class A')
+  }
+}
+
+class B extends A {
+  name: string = "Class B"
+
+  print(){
+    console.log('I am class B')
+  }
+}
+
+
+Interface
+
+
+interface Market {
+  showPrice() :void;
+}
+
+class Car implements Market {
+  price = 100;
+  //Error : Class 'Car' incorrectly implements interface 'Market'.
+  //        Property 'showPrice' is missing in type 'Car' but required in type 'Market'
+}
+
+
+
+
+interface Market {
+  showPrice() :void;
+}
+
+class Car implements Market {
+  price = 100;
+
+  showPrice(): void {
+    console.log(this.price);
+  }
+}
+const instance = new Car();
+//Output: 100
+instance.showPrice();
+
+
+
+
+
+
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+
+type Shape = Circle | Square;
+
+function getArea(shape: Shape): number {
+  if (shape.kind === "circle") {
+    // We know it's a Circle interface here
+    return Math.PI * shape.radius ** 2;
+  } 
+
+  // We know it's a Square interface here
+  return shape.sideLength ** 2;
+}
+
+const circle: Shape = { kind: "circle", radius: 5 };
+const square: Shape = { kind: "square", sideLength: 4 };
+
+console.log(getArea(circle)); // Output: 78.53981633974483
+console.log(getArea(square)); // Output: 16
+
+
+
+
+
+
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+
+type Shape = Circle | Square;
+
+function getArea(shape: Shape): number {
+  if (shape.kind === "circle") {
+    // We know it's a Circle interface here
+    return Math.PI * shape.radius ** 2;
+  } 
+
+  // We know it's a Square interface here
+  return shape.sideLength ** 2;
+}
+
+
+
+const circle: Shape = { kind: "circle", radius: 5 };
+const square: Shape = { kind: "square", sideLength: 4 };
+
+console.log(getArea(circle)); // Output: 78.53981633974483
+console.log(getArea(square)); // Output: 16
+
+
+
+
+interface Inventory {      
+
+const storeInventory: Inventory = {
+  apples: 50,
+  bananas: 30,
+  oranges: 20,
+};
+
+console.log(storeInventory.bananas); // 30
+
+
+
+
+type Statuses = "active" | "inactive" | "pending";
+
+interface StatusMap {
+  [key in Statuses]: boolean;
+}
+
+const userStatus: StatusMap = {
+  active: true,
+  inactive: false,
+  pending: true,
+};
+
+console.log(userStatus.pending); // true
+
+
+
+
+There might be a time when you know the shape of your object, but you don’t know the actual properties of it. 
+Or, the properties might change, but the shape will remain consistent. In these situations, 
+it’s not practical or potentially possible to type every single property on the interface. To to get around this, we can use index signatures.
+An index signature in TypeScript lets you define types for dynamically named object properties. 
+It provides a way to enforce type safety when working with objects where the property names are unknown ahead of time. 
+This is useful when handling key-value structures like dictionaries or maps.
+
+type ObjectType = {
+  [key: string]: number;
+};
+
+
+
+Use an index signature when you need a flexible object structure with unknown or dynamic property names. They are particularly useful in cases like:
+
+Dynamic key-value storage: When working with API responses, logs, or user-generated data, where property names are not predefined.
+Dictionaries and lookup tables: If you need to store a set of related values, such as user permissions or configuration settings.
+Mapping enums or predefined values: If you want to enforce a specific set of keys but allow flexibility in their values.
+
+
+
+
+
+interface UserAges {
+  [name: string]: number;
+}
+
+const userAges: UserAges = {
+  Alice: 30,
+  Bob: 25,
+};
+
+console.log(userAges.Bob); // 25
+
+
+
+const scores: ObjectType = {
+  Alice: 85,
+  Bob: 92,
+  Charlie: 78,
+};
+
+console.log(scores["Alice"]); // 85
+
+
+
+
+
+
+class Octopus {
+  readonly numberOfLegs: number = 8;
+  constructor(readonly name: string) {}
+}
+ 
+let d1 = new Octopus("Man with the 8 strong legs");
+console.log(d1.name);
+
+
+
+
+
+
+class Complex{
+    private _real:number;
+    private _imag:number;
+
+    constructor(real:number,imag:number){
+        this._real=real;
+        this._imag=imag;
+    }
+
+    public get real(){
+        return this._real;
+        
+    }
+  
+    public get imag(){
+        return this._imag;
+    }
+    public set real(real){
+        this._real=real;
+    }
+    public set imag(imag){
+        this._imag=imag;
+    }
+
+    public showValues(){
+        console.log(`Values are ${this._real} and ${this._imag}`)
+    }
+
+}
+
+
+let c1=new Complex(100,200)
+c1.real=500;
+c1.imag=1000;
+
+console.log(c1.real)
+console.log(c1.imag)
+
+c1.showValues();
+
+
+
+
+
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+empTuple = [] as unknown as [string, number, string];
+console.log(empTuple);
+
+
+
+
+
+
+enum CardinalDirections {
+  North = 'North',
+  East = "East",
+  South = "South",
+  West = "West"
+};
+// logs "North"
+console.log(CardinalDirections.North);
+// logs "West"
+console.log(CardinalDirections.West);
+
+
+
+
+
+
+
+
+
+enum StatusCodes {
+  NotFound = 404,
+  Success = 200,
+  Accepted = 202,
+  BadRequest = 400
+}
+// logs 404
+console.log(StatusCodes.NotFound);
+// logs 200
+console.log(StatusCodes.Success);
+
+
+
+
+
+
+
+
+enum CardinalDirections {
+  North = 1,
+  East,
+  South,
+  West
+}
+// logs 1
+console.log(CardinalDirections.North);
+// logs 4
+console.log(CardinalDirections.West);
+
+
+
+
+
+
+
+An enum is a special "class" that represents a group of constants (unchangeable variables).
+Enums come in two flavors string and numeric.
+
+enum CardinalDirections {
+  North,
+  East,
+  South,
+  West
+}
+let currentDirection = CardinalDirections.North;
+// logs 0
+console.log(currentDirection);
+
+
+
+
+
+
+
+let tuple_name = [val1, val2, val3, ...val n];  
+
+
+let arrTuple: [number, string, number, string] = [501, "welcome", 505, "eshan"];
+console.log(arrTuple);
+
+Declaration and Initialization
+
+let arrTuple: [number, number, string, string] = [] as [number, number, string, string];   
+arrTuple[0] = 501;
+arrTuple[1] = 506;
+arrTuple[2] = "hello";
+arrTuple[3] = "world";
+console.log(arrTuple);
+
+
+
+Accessing Tuple Elements
+
+
+var employee: [number, string] = [1, "Steve"];
+employee[0];
+employee[1];
+
+
+Heterogeneous Data Types in Tuples
+
+
+let empTuple: [string, number, string] = ["Vivek", 22, "Honesty"];
+console.log("Name of the Employee is: " + empTuple[0]);
+console.log("Age of the Employee is: " + empTuple[1]);
+console.log(empTuple[0] + " is known for " + empTuple[2]);
+
+
+
+
+Operations on Tuples
+
+
+1. Push Operation
+The push() method adds elements to the tuple.
+
+
+var employee: [number, string] = [1, "Steve"];
+employee.push(2, "Bill"); 
+console.log(employee); 
+
+2. Pop Operation
+
+
+let empTuple: [string, number, string, number] = ["Mohit", 25, "typescript", 10001];
+console.log("Items: " + empTuple);
+empTuple.pop();
+console.log("Length of Tuple Items after pop: " + empTuple.length);
+console.log("Items: " + empTuple);
+
+
+Update or Modify Tuple Elements
+
+
+let empTuple: [string, number, string] = ["Ganesh", 25, "TCS"];
+empTuple[1] = 60;
+console.log("Name of the Employee is: " + empTuple[0]);
+console.log("Age of the Employee is: " + empTuple[1]);
+console.log(empTuple[0] + " is working in " + empTuple[2]);
+
+Clear Tuple Fields
+
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+empTuple = [] as [string, number, string];
+console.log(empTuple);
+
+Destructuring Tuples
+	
+let empTuple: [string, number, string] = ["Rohit Sharma", 25, "typescript"];
+let [name, age] = empTuple;
+console.log(name);
+console.log(age);
+
+Passing Tuples to Functions
+
+let empTuple: [string, number, string] = ["typescript", 101, "rajesh"];
+
+function display(tuple_values: any[]) {
+  for (let i = 0; i < tuple_values.length; i++) {
+    console.log(tuple_values[i]);
+  }
+}
+
+display(empTuple);
+
+
+
+
+
+
+
+
+let numbers: number[] = [1, 2, 3]
+let strings: Array<number> = [1, 2, 3]
+
+interface User {
+  id: number
+  name: string
+}
+
+let users: User[] = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' }
+]
+
+
+let numbers: number[] = [1, 2, 3]
+numbers.push(4) // numbers is now [1, 2, 3, 4]
+
+
+
+let numbers: number[] = [1, 2, 3]
+let hasTwo = numbers.includes(2) // returns true
+let hasTwo = numbers.includes(4) // returns false
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let squares = numbers.map((x) => x * x) // [1, 4, 9, 16]
+
+
+let numbers: number[] = [1, 2, 3, 4]
+numbers.splice(2, 1) // Removes 1 element at index 2, numbers is now [1, 2, 4]
+
+
+let numbers: number[] = [2, 1, 4, 3]
+numbers.sort((a, b) => a - b) // numbers is now [1, 2, 3, 4];
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let found = numbers.find((x) => x > 1) // returns 2
+
+
+
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let even = numbers.filter((x) => x % 2 === 0) // [2, 4]
+
+
+let zeroes = new Array(5).fill(0) // [0, 0, 0, 0, 0]
+
+
+
+let numbers: number[] = [1, 2, 3, 4]
+numbers.forEach((number) => console.log(number)) // this will output each number in sequence
+
+
+let numbers: number[] = [1, 2, 3, 4]
+let length = numbers.length // returns 4
+
+
+let emptyArray: number[] = []
+
+
+----------
+
+const fruits = [];
+fruits.push("banana", "apple", "peach");
+console.log(fruits.length); // 3
+
+fruits[5] = "mango";
+console.log(fruits[5]); // 'mango'
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 6
+
+
+
+fruits.length = 10;
+console.log(fruits); // ['banana', 'apple', 'peach', empty x 2, 'mango', empty x 4]
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 10
+console.log(fruits[8]); // undefined
+
+fruits.length = 2;
+console.log(Object.keys(fruits)); // ['0', '1']
+console.log(fruits.length); // 2
+
+const colors = ["red", "yellow", "blue"];
+colors[5] = "purple";
+colors.forEach((item, index) => {
+  console.log(`${index}: ${item}`);
+});
+
+colors.reverse(); // ['purple', empty × 2, 'blue', 'yellow', 'red']
+
+
+
+const colors = ["red", "yellow", "blue"];
+colors[5] = "purple";
+const iterator = colors.keys();
+for (const key of iterator) {
+  console.log(`${key}: ${colors[key]}`);
+}
+// Output
+// 0: red
+// 1: yellow
+// 2: blue
+// 3: undefined
+// 4: undefined
+// 5: purple
+
+const newColors = colors.toReversed(); // ['purple', undefined, undefined, 'blue', 'yellow', 'red']
+

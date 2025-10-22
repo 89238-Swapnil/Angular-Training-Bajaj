@@ -1,0 +1,20 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 20px;
+  padding: 20px;
+}
+body .description {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+body .description p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  color: aqua;
+}
+
+/*# sourceMappingURL=sample.css.map */

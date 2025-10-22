@@ -1,0 +1,81 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+
+@mixin button-style($bg-color) {
+  background: $bg-color;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  .controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    select {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #addBtn {
+      @include button-style($secondary-color);
+    }
+
+    #removeBtn {
+      @include button-style($danger-color);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    th {
+      background: $primary-color;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+  }
+}

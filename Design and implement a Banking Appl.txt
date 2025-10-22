@@ -1,0 +1,99 @@
+Design and implement a Banking Application using Object-Oriented Programming (OOP) principles such as encapsulation, inheritance, abstraction, and polymorphism. 
+The system should manage bank customers, their accounts, and various types of transactions like deposits, withdrawals, and transfers.
+
+The application should simulate the core operations of a real-world bank, enforcing business rules (e.g., minimum balance for savings accounts,
+overdraft limits for checking accounts) while maintaining a clean and extendable codebase using OOP best practices.
+
+User and Account Management
+Each user can have one or more bank accounts.
+Account types:
+SavingsAccount (with minimum balance rule)
+CheckingAccount (with optional overdraft facility)
+
+2. Core Classes
+You are expected to design the following (and possibly more) classes:
+Bank
+Responsible for creating and managing user accounts and transactions.
+Customer
+Stores customer information like name, ID, and their list of accounts.
+BankAccount (abstract class or interface)
+Common base for all account types.
+Includes:
+accountNumber
+balance
+deposit()
+withdraw()
+getBalance()
+
+SavingsAccount (inherits BankAccount)
+
+Enforces a minimum balance.
+
+CheckingAccount (inherits BankAccount)
+
+Allows overdrafts up to a limit.
+
+Transaction
+
+Records details of a transaction: type, amount, date, involved accounts.
+
+3. Transactions
+
+Deposit: Add funds to an account.
+
+Withdraw: Remove funds if rules allow (e.g., no overdraft on savings).
+
+Transfer: Move funds between two accounts.
+
+All transactions should be logged per account.
+
+4. Error Handling
+
+Throw or handle errors for:
+
+Insufficient balance
+
+Invalid account number
+
+Overdraft limit exceeded
+
+5. OOP Concepts to Apply
+
+Encapsulation: Keep internal details private and expose public methods.
+
+Inheritance: SavingsAccount and CheckingAccount inherit from BankAccount.
+
+Polymorphism: Perform actions like withdraw() on an account without knowing its exact type.
+
+Abstraction: Hide complex logic inside well-defined interfaces/classes.
+
+🧪 Optional Features (For Advanced Implementation)
+
+Transaction history filtering (by date or type)
+
+Interest calculation for savings accounts
+
+Authentication system for users (login, password)
+
+JSON or file-based data persistence
+
+UI with command-line or simple frontend (optional)
+
+📁 Sample Folder Structure
+banking-app/
+├── src/
+│   ├── models/
+│   │   ├── Customer.ts
+│   │   ├── BankAccount.ts
+│   │   ├── SavingsAccount.ts
+│   │   ├── CheckingAccount.ts
+│   │   └── Transaction.ts
+│   ├── services/
+│   │   └── Bank.ts
+│   └── index.ts
+├── tests/
+│   └── Bank.test.ts
+├── tsconfig.json
+└── README.md
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@font-face and !important Example</title>
+
+  <style type="text/css">
+    
+    @font-face {
+      font-family: "marathi";
+      src: url("marathi.ttf") format("truetype");
+    }
+
+    div {
+      font-family: marathi, sans-serif;
+      font-size: 24px;
+      color: darkblue;
+      margin: 20px;
+    }
+
+     
+    p {
+      background-color: rgb(165, 165, 230) !important;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    p {
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+
+  <div>marathi</div>
+
+  <p>This paragraph has a background color with <code>!important</code>, 
+  so it stays blue even though there’s another rule below it.</p>
+
+</body>
+</html>

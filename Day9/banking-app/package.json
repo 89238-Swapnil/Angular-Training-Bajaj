@@ -1,0 +1,26 @@
+{
+  "name": "banking-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A simple OOP-based banking application built with TypeScript.",
+  "main": "dist/index.js",
+  "scripts": {
+      "start": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "banking",
+    "typescript",
+    "oop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    
+    "ts-node": "^10.9.2",
+     "typescript": "^5.9.3",
+    "@types/node": "^24.8.1"
+   
+  }
+}

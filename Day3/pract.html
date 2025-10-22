@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Records Table</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f4f7;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #0e3763;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function Employee(empId, name, salary) {
+      this.empId = empId;
+      this.name = name;
+      this.salary = salary;
+      this.showEmployeeDetails = function() {
+        alert("Employee Details:\nID: " + this.empId + "\nName: " + this.name + "\nSalary: " + this.salary);
+      }
+    }
+
+    var e1 = new Employee(101, "Anish", 1000);
+    var e2 = new Employee(102, "Ankit", 1200);
+    var e3 = new Employee(103, "Vaibhav", 1500);
+    var e4 = new Employee(104, "Amit", 1800);
+
+    
+    var empRecords = [e1, e2, e3, e4];
+
+    
+    function displayEmployees() {
+      let table = `
+        <table>
+          <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+          </tr>
+      `;
+
+      empRecords.forEach(function(emp) {
+        table += `
+          <tr>
+            <td>${emp.empId}</td>
+            <td>${emp.name}</td>
+            <td>${emp.salary}</td>
+          </tr>
+        `;
+      });
+
+      table += `</table>`;
+      document.getElementById("empTable").innerHTML = table;
+    }
+    function saveRecords(){
+        id=document.getElementById("empId").value
+        name=document.getElementById("empName").value
+        sal=document.getElementById("empSalary").value
+        let e=new Employee(id,name,sal)
+        empRecords.push(new Employee (id,name,salary))
+      
+    }
+    function displayRecords(){
+        customTable="<table border='2px'>"
+            empRecords.forEach(rec=>{
+                customTable+=`<tr>
+                <td>${rec.empId}</td>   
+                <td>${rec.name}</td>
+                <td>${rec.salary}</td>
+                </tr>`
+                
+            })
+    }
+
+    
+    window.onload = displayEmployees;
+  </script>
+</head>
+<body>
+  <h1>Employee Records</h1>
+  <div id="empTable"></div>
+</body>
+</html>

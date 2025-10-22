@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save and Fetch JSON Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 9x;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dc4a4a;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #c7d738;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Save Data</h2>
+
+  <label>Name: </label>
+  <input type="text" id="name">
+  <label>Age: </label>
+  <input type="number" id="age">
+  <button onclick="saveData()">Save Data</button>
+  <button onclick="showData()">Show Data</button>
+
+  <div id="output"></div>
+
+  <script>
+  
+    function saveData() {
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+
+    
+
+   
+      let existingData = JSON.parse(localStorage.getItem("people")) || [];
+
+      
+
+      existingData.push({ name: name, age: age });
+      localStorage.setItem("people", JSON.stringify(existingData));
+
+      alert("Data saved successfully!");
+      document.getElementById("name").value = "";
+      document.getElementById("age").value = "";
+    }
+
+  
+    function showData() {
+      let data = JSON.parse(localStorage.getItem("people")) || [];
+
+      if (data.length === 0) {
+        document.getElementById("output").innerHTML = "<p>No data found!</p>";
+        return;
+      }
+
+     
+      let table = `<table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>`;
+
+    
+      data.forEach(item => {
+        table += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+          </tr>`;
+      });
+
+      table += `</table>`;
+
+    
+      document.getElementById("output").innerHTML = table;
+    }
+  </script>
+
+</body>
+</html>

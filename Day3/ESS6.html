@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructor Example</title>
+  <script type="text/javascript">
+    function Complex() {
+      this.showMessage = function() {
+        alert("Message");
+      };
+
+      this.display = function() {
+        alert("OK");
+      };
+
+      this.greeting = function() {
+        alert("Hello from Complex object!");
+      };
+    }
+function Complex() {
+      this.real=real;
+      this.imag=imag;
+
+}
+
+var c1=new Complex(100,200);
+console.log(c1)
+
+
+    var c1 = new Complex();
+    c1.showMessage();
+    c1.display();
+    c1.greeting();
+
+    console.log(c1);
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,31 @@
+// Main Styles 
+@import './mixin.sass';
+
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+
+// Use mixins
+.container {
+  @include flex-center(column);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.btn-primary {
+  @include button($primary-color);
+}
+
+.btn-secondary {
+  @include button($secondary-color);
+}
+
+.card {
+  @include card();
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+}

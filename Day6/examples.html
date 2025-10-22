@@ -1,0 +1,2388 @@
+1] FIST PROGRAM
+
+<html>
+<body>
+
+<script type="text/javascript">
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+
+2] WRITTING COMMENTS 
+
+<html>
+<body>
+
+<script type="text/javascript">
+// Write a heading
+document.write("<h1>This is a heading</h1>");
+// Write two paragraphs:
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+
+3] MULTILINE COMMENT
+
+<html>
+<body>
+
+<script type="text/javascript">
+/*
+The code below will write
+one heading and two paragraphs
+*/
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+4] WRITTING VARIABLES
+
+<html>
+<body>
+
+<script type="text/javascript">
+var firstname;
+firstname="Hege";
+document.write(firstname);
+document.write("<br />");
+firstname="Tove";
+document.write(firstname);
+</script>
+
+<p>The script above declares a variable,
+assigns a value to it, displays the value, changes the value,
+and displays the value again.</p>
+
+</body>
+</html>
+
+
+
+5]IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var d = new Date();
+var time = d.getHours();
+
+if (time < 10) 
+  {
+  document.write("<b>Good morning</b>");
+  }
+</script>
+
+<p>This example demonstrates the If statement.</p>
+<p>If the time on your browser is less than 10, you will get a "Good morning" greeting.</p>
+
+</body>
+</html>
+
+6] IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var d = new Date();
+var time = d.getHours();
+
+if (time < 10) 
+{
+document.write("<b>Good morning</b>");
+}
+else
+{
+document.write("<b>Good day</b>");
+}
+</script>
+
+<p>
+This example demonstrates the If...Else statement.
+</p>
+
+<p>
+If the time on your browser is less than 10,
+you will get a "Good morning" greeting.
+Otherwise you will get a "Good day" greeting.
+</p>
+
+</body>
+</html>
+
+7] IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var r=Math.random();
+if (r>0.5)
+{
+document.write("<a href='http://www.w3schools.com'>Learn Web Development!</a>");
+}
+else
+{
+document.write("<a href='http://www.refsnesdata.no'>Visit Refsnes Data!</a>");
+}
+</script>
+
+</body>
+</html>
+
+
+
+8] SWITCH STATEMENT
+
+<html>
+<body>
+<script type="text/javascript">
+var d=new Date();
+var theDay=d.getDay();
+switch (theDay)
+{
+case 5:
+  document.write("<b>Finally Friday</b>");
+  break;
+case 6:
+  document.write("<b>Super Saturday</b>");
+  break;
+case 0:
+  document.write("<b>Sleepy Sunday</b>");
+  break;
+default:
+  document.write("<b>I'm really looking forward to this weekend!</b>");
+}
+</script>
+
+<p>This JavaScript will generate a different greeting based on what day it is. Note that Sunday=0, Monday=1, Tuesday=2, etc.</p>
+
+</body>
+</html>
+
+
+
+9] ALERT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("Hello! I am an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_alert()" value="Show alert box" />
+
+</body>
+</html>
+
+
+10] ALERT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function disp_alert()
+{
+alert("Hello again! This is how we" + '\n' + "add line breaks to an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="disp_alert()" value="Display alert box" />
+
+</body>
+</html>
+
+
+
+11] CONFIRM BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Press a button!");
+if (r==true)
+  {
+  alert("You pressed OK!");
+  }
+else
+  {
+  alert("You pressed Cancel!");
+  }
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_confirm()" value="Show a confirm box" />
+
+</body>
+</html>
+
+
+12] PROMPT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_prompt()
+{
+var name=prompt("Please enter your name","Harry Potter");
+if (name!=null && name!="")
+  {
+  document.write("Hello " + name + "! How are you today?");
+  }
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_prompt()" value="Show prompt box" />
+
+</body>
+</html>
+
+
+
+13] CALL A FUNCTION
+
+
+<html>
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+alert("Hello World!");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Click me!" onclick="displaymessage()" />
+</form>
+
+<p>By pressing the button above, a function will be called. The function will alert a message.</p>
+
+</body>
+</html>
+
+
+
+14] FUNCTION WITH AN ARGUMENT
+
+<html>
+<head>
+<script type="text/javascript">
+function myfunction(txt)
+{
+alert(txt);
+}
+</script>
+</head>
+<body>
+
+<form>
+<input type="button" onclick="myfunction('Hello')" value="Call function">
+</form>
+
+<p>By pressing the button above, a function will be called with "Hello" as a parameter. The function will alert the parameter.</p>
+
+</body>
+</html>
+
+
+15] FUNCTION WITH AN ARGUMENT
+
+<html> 
+<head> 
+<script type="text/javascript"> 
+function myfunction(txt) 
+{ 
+alert(txt);
+} 
+</script> 
+</head> 
+
+<body> 
+<form> 
+<input type="button" 
+onclick="myfunction('Good Morning!')" 
+value="In the Morning"> 
+
+<input type="button" 
+onclick="myfunction('Good Evening!')" 
+value="In the Evening"> 
+</form> 
+
+<p>
+When you click on one of the buttons, a function will be called. The function will alert
+the argument that is passed to it.
+</p>
+
+</body> 
+</html> 
+
+
+16] FUNCTION WITH RETURN VALUE
+
+<html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+return ("Hello world!");
+}
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+document.write(myFunction())
+</script>
+
+</body>
+</html>
+
+
+16] FUNCTION WITH ARGUMENT AND RETURN VALUE
+
+<html>
+<head>
+<script type="text/javascript">
+function product(a,b)
+{
+return a*b;
+}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+document.write(product(4,3));
+</script>
+
+<p>The script in the body section calls a function with two parameters (4 and 3).</p>
+<p>The function will return the product of these two parameters.</p>
+</body>
+</html>
+
+17] FOR LOOP
+
+<html>
+<body>
+
+<script type="text/javascript">
+var i=0;
+for (i=0;i<=5;i++)
+{
+document.write("The number is " + i);
+document.write("<br />");
+}
+</script>
+
+<p>Explanation:</p>
+
+<p>This for loop starts with i=0.</p>
+
+<p>As long as <b>i</b> is less than, or equal to 5, the loop will continue to run.</p>
+
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+</body>
+</html>
+
+18] LOOPING THROUGH HTMLHEADER
+
+<html>
+<body>
+
+<script type="text/javascript">
+for (i = 1; i <= 6; i++)
+{
+document.write("<h" + i + ">This is heading " + i);
+document.write("</h" + i + ">");
+}
+</script>
+
+</body>
+</html>
+
+
+19] WHILE LOOP
+
+<html>
+<body>
+
+<script type="text/javascript">
+i=0;
+while (i<=5)
+{
+document.write("The number is " + i);
+document.write("<br />");
+i++;
+}
+</script>
+
+<p>Explanation:</p>
+<p><b>i</b> is equal to 0.</p>
+<p>While <b>i</b> is less than , or equal to, 5, the loop will continue to run.</p>
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+</body>
+</html>
+
+20] DO WHILE LOOP
+
+
+<html>
+<body>
+
+<script type="text/javascript">
+i = 0;
+do
+{
+document.write("The number is " + i);
+document.write("<br />");
+i++;
+}
+while (i <= 5)
+</script>
+
+<p>Explanation:</p>
+
+<p><b>i</b>  equal to 0.</p>
+
+<p>The loop will run</p>
+
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+<p>While <b>i</b> is less than , or equal to, 5, the loop will continue to run.</p>
+
+
+</body>
+</html>
+
+21] BREAK A LOOP
+
+
+<html>
+<body>
+<script type="text/javascript">
+var i=0;
+for (i=0;i<=10;i++)
+{
+if (i==3)
+  {
+  break;
+  }
+document.write("The number is " + i);
+document.write("<br />");
+}
+</script>
+<p>Explanation: The loop will break when i=3.</p>
+</body>
+</html>
+
+22] USING FOR IN STATEMENT TO LOOP THROUGH ELEMENTS OF AN OBJECT
+
+<html>
+<body>
+<script type="text/javascript">
+
+var person={fname:"John",lname:"Doe",age:25}; 
+
+for (x in person)
+{
+document.write(person[x] + " ");
+}
+
+</script>
+</body>
+</html>
+
+23] ADDING AN EVENT
+
+<html>
+<head>
+<script type="text/javascript">
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+</head>
+<body>
+
+<h1>My First Web Page</h1>
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+</body>
+</html> 
+
+24] ADDING AN MOUSE OVER EVENT
+
+<html>
+<head>
+<script type="text/javascript">
+function writeText(txt)
+{
+document.getElementById("desc").innerHTML=txt;
+}
+</script>
+</head>
+
+<body>
+<img src ="planets.gif" width ="145" height ="126" alt="Planets" usemap="#planetmap" />
+
+<map name="planetmap">
+<area shape ="rect" coords ="0,0,82,126"
+onmouseover="writeText('The Sun and the gas giant planets like Jupiter are by far the largest objects in our Solar System.')"
+href ="sun.htm" target ="_blank" alt="Sun" />
+
+<area shape ="circle" coords ="90,58,3"
+onmouseover="writeText('The planet Mercury is very difficult to study from the Earth because it is always so close to the Sun.')"
+href ="mercur.htm" target ="_blank" alt="Mercury" />
+
+<area shape ="circle" coords ="124,58,8"
+onmouseover="writeText('Until the 1960s, Venus was often considered a twin sister to the Earth because Venus is the nearest planet to us, and because the two planets seem to share many characteristics.')"
+href ="venus.htm" target ="_blank" alt="Venus" />
+</map> 
+
+<p id="desc">Mouse over the sun and the planets and see the different descriptions.</p>
+
+</body>
+</html>
+
+
+
+25] TRY CATCH BLOCK
+
+<html>
+<head>
+<script type="text/javascript">
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="There was an error on this page.\n\n";
+  txt+="Error description: " + err.description + "\n\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+26] TRY CATCH BLOCK WITH CONFIRM BOX
+
+<html>
+<head>
+<script type="text/javascript">
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="There was an error on this page.\n\n";
+  txt+="Click OK to continue viewing this page,\n";
+  txt+="or Cancel to return to the home page.\n\n";
+  if(!confirm(txt))
+    {
+    document.location.href="http://www.w3schools.com/";
+    }
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+27] ON ERROR EVENT
+
+
+<html>
+<head>
+<script type="text/javascript">
+onerror=handleErr;
+var txt="";
+
+function handleErr(msg,url,l)
+{
+txt="There was an error on this page.\n\n";
+txt+="Error: " + msg + "\n";
+txt+="URL: " + url + "\n";
+txt+="Line: " + l + "\n\n";
+txt+="Click OK to continue.\n\n";
+alert(txt);
+return true;
+}
+
+function message()
+{
+adddlert("Welcome guest!");
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+28] TIMMING
+
+<html>
+<head>
+<script type="text/javascript">
+function timeMsg()
+{
+var t=setTimeout("alertMsg()",3000);
+}
+function alertMsg()
+{
+alert("Hello");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Display alert box in 3 seconds" onClick="timeMsg()" />
+</form>
+</body>
+
+</html>
+
+
+29] TIMMING IN INFINITE LOOPING
+
+<html>
+<head>
+<script type="text/javascript">
+var c=0;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+document.getElementById('txt').value=c;
+c=c+1;
+t=setTimeout("timedCount()",1000);
+}
+
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
+
+function stopCount()
+{
+clearTimeout(t);
+timer_is_on=0;
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Start count!" onclick="doTimer()" />
+<input type="text" id="txt" />
+<input type="button" value="Stop count!" onclick="stopCount()" />
+</form>
+<p>
+Click on the "Start count!" button above to start the timer. The input field will count forever, starting at 0. Click on the "Stop count!" button to stop the counting. Click on the "Start count!" button to start the timer again.
+</p>
+</body>
+</html>
+
+
+
+30] ACCESSING MEMBERS THROUGH OBJECT
+
+<html>
+<body>
+
+<script type="text/javascript">
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+}
+
+myFather=new person("John","Doe",50,"blue");
+
+document.write(myFather.firstname + " is " + myFather.age + " years old.");
+</script>
+
+</body>
+</html>
+
+
+31] CREATE AN DIRECT INSTANCE OF AN OBJECT
+
+<html>
+<body>
+
+<script type="text/javascript">
+personObj={firstname:"John",lastname:"Doe",age:50,eyecolor:"blue"}
+
+document.write(personObj.firstname + " is " + personObj.age + " years old.");
+</script>
+
+</body>
+</html>
+
+
+32] CLOCK CREATION
+
+<html>
+<head>
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<div id="txt"></div>
+</body>
+</html>
+
+
+
+33] RETURNING LENGTH OF STRING
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var txt = "Hello World!";
+document.write(txt.length);
+
+</script>
+
+</body>
+</html>
+
+
+34] CREATING AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+var i;
+var mycars = new Array();
+mycars[0] = "Saab";
+mycars[1] = "Volvo";
+mycars[2] = "BMW";
+
+for (i=0;i<mycars.length;i++)
+{
+document.write(mycars[i] + "<br />");
+}
+</script>
+
+</body>
+</html>
+
+35] JOIN TWO ARRAYS
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var parents = ["Jani", "Tove"];
+var children = ["Cecilie", "Lone"];
+var family = parents.concat(children);
+document.write(family);
+
+</script>
+
+</body>
+</html>
+
+
+36] JOIN THREE ARRAYS
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var parents = ["Jani", "Tove"];
+var brothers = ["Stale", "Kai Jim", "Borge"];
+var children = ["Cecilie", "Lone"];
+var family = parents.concat(brothers, children);
+document.write(family);
+
+</script>
+
+</body>
+</html>
+
+37] JOIN ALL ELEMENTS OF ARRAY TO STRING
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.join() + "<br />");
+document.write(fruits.join("+") + "<br />");
+document.write(fruits.join(" and "));
+
+</script>
+
+</body>
+</html>
+
+38] REMOVE THE LAST ELEMENT OF AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.pop() + "<br />");
+document.write(fruits + "<br />");
+document.write(fruits.pop() + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+39] ADD NEW ELEMENTS AD THE END OF ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.push("Kiwi") + "<br />");
+document.write(fruits.push("Lemon","Pineapple") + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+40] REVERSE ARRAY
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.reverse());
+
+</script>
+
+</body>
+</html>
+
+41] REMOVE FIRST ELEMENT FROM ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.shift() + "<br />");
+document.write(fruits + "<br />");
+document.write(fruits.shift() + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+
+42] SORT AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.sort());
+
+</script>
+
+</body>
+</html>
+
+
+43] SORT NUMERIVALY ASC
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+function sortNumber(a, b)
+{
+return a - b;
+}
+
+var n = ["10", "5", "40", "25", "100", "1"];
+document.write(n.sort(sortNumber));
+
+</script>
+
+</body>
+</html>
+
+44] SORT NUMBERIVCAL DESC
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+function sortNumber(a, b)
+{
+return b - a;
+}
+
+var n = ["10", "5", "40", "25", "100", "1"];
+document.write(n.sort(sortNumber));
+
+</script>
+
+</body>
+</html>
+
+
+45] ADD ELEMENT AT SPECIFIC POSITION
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write("Removed: " + fruits.splice(2,0,"Lemon") + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+
+46] CHECK BOOLEAN VALUE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var b1=new Boolean( 0);
+var b2=new Boolean(1);
+var b3=new Boolean("");
+var b4=new Boolean(null);
+var b5=new Boolean(NaN);
+var b6=new Boolean("false");
+
+document.write("0 is boolean "+ b1 +"<br />");
+document.write("1 is boolean "+ b2 +"<br />");
+document.write("An empty string is boolean "+ b3 + "<br />");
+document.write("null is boolean "+ b4+ "<br />");
+document.write("NaN is boolean "+ b5 +"<br />");
+document.write("The string 'false' is boolean "+ b6 +"<br />");
+</script>
+
+</body>
+</html>
+
+
+47] MATH.MAX
+
+<html>
+<body>
+
+<script type="text/javascript">
+document.write(Math.max(5,10) + "<br />");
+document.write(Math.max(0,150,30,20,38) + "<br />");
+document.write(Math.max(-5,10) + "<br />");
+document.write(Math.max(-5,-10) + "<br />");
+document.write(Math.max(1.5,2.5));
+</script>
+
+</body>
+</html>
+
+48] MATH.MIN
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+document.write(Math.min(5,10) + "<br />");
+document.write(Math.min(0,150,30,20,38) + "<br />");
+document.write(Math.min(-5,10) + "<br />");
+document.write(Math.min(-5,-10) + "<br />");
+document.write(Math.min(1.5,2.5));
+
+</script>
+
+</body>
+</html>
+
+49] CONVERT CELCSIOUS TO FAHRENHEIT
+
+<html>
+<head>
+<script type="text/javascript">
+function convert(degree)
+{
+if (degree=="C")
+ {
+ F=document.getElementById("c").value * 9 / 5 + 32;
+ document.getElementById("f").value=Math.round(F);
+ }
+else	
+ {
+ C=(document.getElementById("f").value -32) * 5 / 9;
+ document.getElementById("c").value=Math.round(C);
+ }
+}
+</script>
+</head>
+
+<body>
+<p></p><b>Insert a number into one of the input fields below:</b></p>
+<form>
+<input id="c" name="c" onkeyup="convert('C')"> degrees Celsius<br />
+equals<br /> 
+<input id="f" name="f" onkeyup="convert('F')"> degrees Fahrenheit 
+</form>
+<p>Note that the <b>Math.round()</b> method is used, so that the result will be returned as an integer.</p>
+</body>
+
+</html>
+
+
+50] DISPALY AN ALLERT BOX
+
+
+<html>
+<head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("Hello! I am an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_alert()" value="Show alert box" />
+
+</body>
+</html>
+
+
+
+51] OPEN AN WINDOW
+
+<html>
+<head>
+<script type="text/javascript">
+function open_win() 
+{
+window.open("http://www.microsoft.com/");
+window.open("http://www.w3schools.com/");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type=button value="Open Windows" onclick="open_win()">
+</form>
+</body>
+
+</html>
+
+
+
+
+
+
+1] FIST PROGRAM
+
+<html>
+<body>
+
+<script type="text/javascript">
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+
+2] WRITTING COMMENTS 
+
+<html>
+<body>
+
+<script type="text/javascript">
+// Write a heading
+document.write("<h1>This is a heading</h1>");
+// Write two paragraphs:
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+
+3] MULTILINE COMMENT
+
+<html>
+<body>
+
+<script type="text/javascript">
+/*
+The code below will write
+one heading and two paragraphs
+*/
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+document.write("<p>This is another paragraph.</p>");
+</script>
+
+</body>
+</html>
+
+4] WRITTING VARIABLES
+
+<html>
+<body>
+
+<script type="text/javascript">
+var firstname;
+firstname="Hege";
+document.write(firstname);
+document.write("<br />");
+firstname="Tove";
+document.write(firstname);
+</script>
+
+<p>The script above declares a variable,
+assigns a value to it, displays the value, changes the value,
+and displays the value again.</p>
+
+</body>
+</html>
+
+
+
+5]IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var d = new Date();
+var time = d.getHours();
+
+if (time < 10) 
+  {
+  document.write("<b>Good morning</b>");
+  }
+</script>
+
+<p>This example demonstrates the If statement.</p>
+<p>If the time on your browser is less than 10, you will get a "Good morning" greeting.</p>
+
+</body>
+</html>
+
+6] IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var d = new Date();
+var time = d.getHours();
+
+if (time < 10) 
+{
+document.write("<b>Good morning</b>");
+}
+else
+{
+document.write("<b>Good day</b>");
+}
+</script>
+
+<p>
+This example demonstrates the If...Else statement.
+</p>
+
+<p>
+If the time on your browser is less than 10,
+you will get a "Good morning" greeting.
+Otherwise you will get a "Good day" greeting.
+</p>
+
+</body>
+</html>
+
+7] IF ELSE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var r=Math.random();
+if (r>0.5)
+{
+document.write("<a href='http://www.w3schools.com'>Learn Web Development!</a>");
+}
+else
+{
+document.write("<a href='http://www.refsnesdata.no'>Visit Refsnes Data!</a>");
+}
+</script>
+
+</body>
+</html>
+
+
+
+8] SWITCH STATEMENT
+
+<html>
+<body>
+<script type="text/javascript">
+var d=new Date();
+var theDay=d.getDay();
+switch (theDay)
+{
+case 5:
+  document.write("<b>Finally Friday</b>");
+  break;
+case 6:
+  document.write("<b>Super Saturday</b>");
+  break;
+case 0:
+  document.write("<b>Sleepy Sunday</b>");
+  break;
+default:
+  document.write("<b>I'm really looking forward to this weekend!</b>");
+}
+</script>
+
+<p>This JavaScript will generate a different greeting based on what day it is. Note that Sunday=0, Monday=1, Tuesday=2, etc.</p>
+
+</body>
+</html>
+
+
+
+9] ALERT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("Hello! I am an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_alert()" value="Show alert box" />
+
+</body>
+</html>
+
+
+10] ALERT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function disp_alert()
+{
+alert("Hello again! This is how we" + '\n' + "add line breaks to an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="disp_alert()" value="Display alert box" />
+
+</body>
+</html>
+
+
+
+11] CONFIRM BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Press a button!");
+if (r==true)
+  {
+  alert("You pressed OK!");
+  }
+else
+  {
+  alert("You pressed Cancel!");
+  }
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_confirm()" value="Show a confirm box" />
+
+</body>
+</html>
+
+
+12] PROMPT BOX
+
+<html>
+<head>
+<script type="text/javascript">
+function show_prompt()
+{
+var name=prompt("Please enter your name","Harry Potter");
+if (name!=null && name!="")
+  {
+  document.write("Hello " + name + "! How are you today?");
+  }
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_prompt()" value="Show prompt box" />
+
+</body>
+</html>
+
+
+
+13] CALL A FUNCTION
+
+
+<html>
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+alert("Hello World!");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Click me!" onclick="displaymessage()" />
+</form>
+
+<p>By pressing the button above, a function will be called. The function will alert a message.</p>
+
+</body>
+</html>
+
+
+
+14] FUNCTION WITH AN ARGUMENT
+
+<html>
+<head>
+<script type="text/javascript">
+function myfunction(txt)
+{
+alert(txt);
+}
+</script>
+</head>
+<body>
+
+<form>
+<input type="button" onclick="myfunction('Hello')" value="Call function">
+</form>
+
+<p>By pressing the button above, a function will be called with "Hello" as a parameter. The function will alert the parameter.</p>
+
+</body>
+</html>
+
+
+15] FUNCTION WITH AN ARGUMENT
+
+<html> 
+<head> 
+<script type="text/javascript"> 
+function myfunction(txt) 
+{ 
+alert(txt);
+} 
+</script> 
+</head> 
+
+<body> 
+<form> 
+<input type="button" 
+onclick="myfunction('Good Morning!')" 
+value="In the Morning"> 
+
+<input type="button" 
+onclick="myfunction('Good Evening!')" 
+value="In the Evening"> 
+</form> 
+
+<p>
+When you click on one of the buttons, a function will be called. The function will alert
+the argument that is passed to it.
+</p>
+
+</body> 
+</html> 
+
+
+16] FUNCTION WITH RETURN VALUE
+
+<html>
+<head>
+<script type="text/javascript">
+function myFunction()
+{
+return ("Hello world!");
+}
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+document.write(myFunction())
+</script>
+
+</body>
+</html>
+
+
+16] FUNCTION WITH ARGUMENT AND RETURN VALUE
+
+<html>
+<head>
+<script type="text/javascript">
+function product(a,b)
+{
+return a*b;
+}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+document.write(product(4,3));
+</script>
+
+<p>The script in the body section calls a function with two parameters (4 and 3).</p>
+<p>The function will return the product of these two parameters.</p>
+</body>
+</html>
+
+17] FOR LOOP
+
+<html>
+<body>
+
+<script type="text/javascript">
+var i=0;
+for (i=0;i<=5;i++)
+{
+document.write("The number is " + i);
+document.write("<br />");
+}
+</script>
+
+<p>Explanation:</p>
+
+<p>This for loop starts with i=0.</p>
+
+<p>As long as <b>i</b> is less than, or equal to 5, the loop will continue to run.</p>
+
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+</body>
+</html>
+
+18] LOOPING THROUGH HTMLHEADER
+
+<html>
+<body>
+
+<script type="text/javascript">
+for (i = 1; i <= 6; i++)
+{
+document.write("<h" + i + ">This is heading " + i);
+document.write("</h" + i + ">");
+}
+</script>
+
+</body>
+</html>
+
+
+19] WHILE LOOP
+
+<html>
+<body>
+
+<script type="text/javascript">
+i=0;
+while (i<=5)
+{
+document.write("The number is " + i);
+document.write("<br />");
+i++;
+}
+</script>
+
+<p>Explanation:</p>
+<p><b>i</b> is equal to 0.</p>
+<p>While <b>i</b> is less than , or equal to, 5, the loop will continue to run.</p>
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+</body>
+</html>
+
+20] DO WHILE LOOP
+
+
+<html>
+<body>
+
+<script type="text/javascript">
+i = 0;
+do
+{
+document.write("The number is " + i);
+document.write("<br />");
+i++;
+}
+while (i <= 5)
+</script>
+
+<p>Explanation:</p>
+
+<p><b>i</b>  equal to 0.</p>
+
+<p>The loop will run</p>
+
+<p><b>i</b> will increase by 1 each time the loop runs.</p>
+
+<p>While <b>i</b> is less than , or equal to, 5, the loop will continue to run.</p>
+
+
+</body>
+</html>
+
+21] BREAK A LOOP
+
+
+<html>
+<body>
+<script type="text/javascript">
+var i=0;
+for (i=0;i<=10;i++)
+{
+if (i==3)
+  {
+  break;
+  }
+document.write("The number is " + i);
+document.write("<br />");
+}
+</script>
+<p>Explanation: The loop will break when i=3.</p>
+</body>
+</html>
+
+22] USING FOR IN STATEMENT TO LOOP THROUGH ELEMENTS OF AN OBJECT
+
+<html>
+<body>
+<script type="text/javascript">
+
+var person={fname:"John",lname:"Doe",age:25}; 
+
+for (x in person)
+{
+document.write(person[x] + " ");
+}
+
+</script>
+</body>
+</html>
+
+23] ADDING AN EVENT
+
+<html>
+<head>
+<script type="text/javascript">
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+</head>
+<body>
+
+<h1>My First Web Page</h1>
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+</body>
+</html> 
+
+24] ADDING AN MOUSE OVER EVENT
+
+<html>
+<head>
+<script type="text/javascript">
+function writeText(txt)
+{
+document.getElementById("desc").innerHTML=txt;
+}
+</script>
+</head>
+
+<body>
+<img src ="planets.gif" width ="145" height ="126" alt="Planets" usemap="#planetmap" />
+
+<map name="planetmap">
+<area shape ="rect" coords ="0,0,82,126"
+onmouseover="writeText('The Sun and the gas giant planets like Jupiter are by far the largest objects in our Solar System.')"
+href ="sun.htm" target ="_blank" alt="Sun" />
+
+<area shape ="circle" coords ="90,58,3"
+onmouseover="writeText('The planet Mercury is very difficult to study from the Earth because it is always so close to the Sun.')"
+href ="mercur.htm" target ="_blank" alt="Mercury" />
+
+<area shape ="circle" coords ="124,58,8"
+onmouseover="writeText('Until the 1960s, Venus was often considered a twin sister to the Earth because Venus is the nearest planet to us, and because the two planets seem to share many characteristics.')"
+href ="venus.htm" target ="_blank" alt="Venus" />
+</map> 
+
+<p id="desc">Mouse over the sun and the planets and see the different descriptions.</p>
+
+</body>
+</html>
+
+
+
+25] TRY CATCH BLOCK
+
+<html>
+<head>
+<script type="text/javascript">
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="There was an error on this page.\n\n";
+  txt+="Error description: " + err.description + "\n\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+26] TRY CATCH BLOCK WITH CONFIRM BOX
+
+<html>
+<head>
+<script type="text/javascript">
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="There was an error on this page.\n\n";
+  txt+="Click OK to continue viewing this page,\n";
+  txt+="or Cancel to return to the home page.\n\n";
+  if(!confirm(txt))
+    {
+    document.location.href="http://www.w3schools.com/";
+    }
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+27] ON ERROR EVENT
+
+
+<html>
+<head>
+<script type="text/javascript">
+onerror=handleErr;
+var txt="";
+
+function handleErr(msg,url,l)
+{
+txt="There was an error on this page.\n\n";
+txt+="Error: " + msg + "\n";
+txt+="URL: " + url + "\n";
+txt+="Line: " + l + "\n\n";
+txt+="Click OK to continue.\n\n";
+alert(txt);
+return true;
+}
+
+function message()
+{
+adddlert("Welcome guest!");
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+
+
+28] TIMMING
+
+<html>
+<head>
+<script type="text/javascript">
+function timeMsg()
+{
+var t=setTimeout("alertMsg()",3000);
+}
+function alertMsg()
+{
+alert("Hello");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Display alert box in 3 seconds" onClick="timeMsg()" />
+</form>
+</body>
+
+</html>
+
+
+29] TIMMING IN INFINITE LOOPING
+
+<html>
+<head>
+<script type="text/javascript">
+var c=0;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+document.getElementById('txt').value=c;
+c=c+1;
+t=setTimeout("timedCount()",1000);
+}
+
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
+
+function stopCount()
+{
+clearTimeout(t);
+timer_is_on=0;
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Start count!" onclick="doTimer()" />
+<input type="text" id="txt" />
+<input type="button" value="Stop count!" onclick="stopCount()" />
+</form>
+<p>
+Click on the "Start count!" button above to start the timer. The input field will count forever, starting at 0. Click on the "Stop count!" button to stop the counting. Click on the "Start count!" button to start the timer again.
+</p>
+</body>
+</html>
+
+
+
+30] ACCESSING MEMBERS THROUGH OBJECT
+
+<html>
+<body>
+
+<script type="text/javascript">
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+}
+
+myFather=new person("John","Doe",50,"blue");
+
+document.write(myFather.firstname + " is " + myFather.age + " years old.");
+</script>
+
+</body>
+</html>
+
+
+31] CREATE AN DIRECT INSTANCE OF AN OBJECT
+
+<html>
+<body>
+
+<script type="text/javascript">
+personObj={firstname:"John",lastname:"Doe",age:50,eyecolor:"blue"}
+
+document.write(personObj.firstname + " is " + personObj.age + " years old.");
+</script>
+
+</body>
+</html>
+
+
+32] CLOCK CREATION
+
+<html>
+<head>
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<div id="txt"></div>
+</body>
+</html>
+
+
+
+33] RETURNING LENGTH OF STRING
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var txt = "Hello World!";
+document.write(txt.length);
+
+</script>
+
+</body>
+</html>
+
+
+34] CREATING AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+var i;
+var mycars = new Array();
+mycars[0] = "Saab";
+mycars[1] = "Volvo";
+mycars[2] = "BMW";
+
+for (i=0;i<mycars.length;i++)
+{
+document.write(mycars[i] + "<br />");
+}
+</script>
+
+</body>
+</html>
+
+35] JOIN TWO ARRAYS
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var parents = ["Jani", "Tove"];
+var children = ["Cecilie", "Lone"];
+var family = parents.concat(children);
+document.write(family);
+
+</script>
+
+</body>
+</html>
+
+
+36] JOIN THREE ARRAYS
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var parents = ["Jani", "Tove"];
+var brothers = ["Stale", "Kai Jim", "Borge"];
+var children = ["Cecilie", "Lone"];
+var family = parents.concat(brothers, children);
+document.write(family);
+
+</script>
+
+</body>
+</html>
+
+37] JOIN ALL ELEMENTS OF ARRAY TO STRING
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.join() + "<br />");
+document.write(fruits.join("+") + "<br />");
+document.write(fruits.join(" and "));
+
+</script>
+
+</body>
+</html>
+
+38] REMOVE THE LAST ELEMENT OF AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.pop() + "<br />");
+document.write(fruits + "<br />");
+document.write(fruits.pop() + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+39] ADD NEW ELEMENTS AD THE END OF ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.push("Kiwi") + "<br />");
+document.write(fruits.push("Lemon","Pineapple") + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+40] REVERSE ARRAY
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.reverse());
+
+</script>
+
+</body>
+</html>
+
+41] REMOVE FIRST ELEMENT FROM ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.shift() + "<br />");
+document.write(fruits + "<br />");
+document.write(fruits.shift() + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+
+42] SORT AN ARRAY
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write(fruits.sort());
+
+</script>
+
+</body>
+</html>
+
+
+43] SORT NUMERIVALY ASC
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+function sortNumber(a, b)
+{
+return a - b;
+}
+
+var n = ["10", "5", "40", "25", "100", "1"];
+document.write(n.sort(sortNumber));
+
+</script>
+
+</body>
+</html>
+
+44] SORT NUMBERIVCAL DESC
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+function sortNumber(a, b)
+{
+return b - a;
+}
+
+var n = ["10", "5", "40", "25", "100", "1"];
+document.write(n.sort(sortNumber));
+
+</script>
+
+</body>
+</html>
+
+
+45] ADD ELEMENT AT SPECIFIC POSITION
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.write("Removed: " + fruits.splice(2,0,"Lemon") + "<br />");
+document.write(fruits);
+
+</script>
+
+</body>
+</html>
+
+
+46] CHECK BOOLEAN VALUE
+
+<html>
+<body>
+
+<script type="text/javascript">
+var b1=new Boolean( 0);
+var b2=new Boolean(1);
+var b3=new Boolean("");
+var b4=new Boolean(null);
+var b5=new Boolean(NaN);
+var b6=new Boolean("false");
+
+document.write("0 is boolean "+ b1 +"<br />");
+document.write("1 is boolean "+ b2 +"<br />");
+document.write("An empty string is boolean "+ b3 + "<br />");
+document.write("null is boolean "+ b4+ "<br />");
+document.write("NaN is boolean "+ b5 +"<br />");
+document.write("The string 'false' is boolean "+ b6 +"<br />");
+</script>
+
+</body>
+</html>
+
+
+47] MATH.MAX
+
+<html>
+<body>
+
+<script type="text/javascript">
+document.write(Math.max(5,10) + "<br />");
+document.write(Math.max(0,150,30,20,38) + "<br />");
+document.write(Math.max(-5,10) + "<br />");
+document.write(Math.max(-5,-10) + "<br />");
+document.write(Math.max(1.5,2.5));
+</script>
+
+</body>
+</html>
+
+48] MATH.MIN
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+document.write(Math.min(5,10) + "<br />");
+document.write(Math.min(0,150,30,20,38) + "<br />");
+document.write(Math.min(-5,10) + "<br />");
+document.write(Math.min(-5,-10) + "<br />");
+document.write(Math.min(1.5,2.5));
+
+</script>
+
+</body>
+</html>
+
+49] CONVERT CELCSIOUS TO FAHRENHEIT
+
+<html>
+<head>
+<script type="text/javascript">
+function convert(degree)
+{
+if (degree=="C")
+ {
+ F=document.getElementById("c").value * 9 / 5 + 32;
+ document.getElementById("f").value=Math.round(F);
+ }
+else	
+ {
+ C=(document.getElementById("f").value -32) * 5 / 9;
+ document.getElementById("c").value=Math.round(C);
+ }
+}
+</script>
+</head>
+
+<body>
+<p></p><b>Insert a number into one of the input fields below:</b></p>
+<form>
+<input id="c" name="c" onkeyup="convert('C')"> degrees Celsius<br />
+equals<br /> 
+<input id="f" name="f" onkeyup="convert('F')"> degrees Fahrenheit 
+</form>
+<p>Note that the <b>Math.round()</b> method is used, so that the result will be returned as an integer.</p>
+</body>
+
+</html>
+
+
+50] DISPALY AN ALLERT BOX
+
+
+<html>
+<head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("Hello! I am an alert box!");
+}
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_alert()" value="Show alert box" />
+
+</body>
+</html>
+
+
+
+51] OPEN AN WINDOW
+
+<html>
+<head>
+<script type="text/javascript">
+function open_win() 
+{
+window.open("http://www.microsoft.com/");
+window.open("http://www.w3schools.com/");
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type=button value="Open Windows" onclick="open_win()">
+</form>
+</body>
+
+</html>

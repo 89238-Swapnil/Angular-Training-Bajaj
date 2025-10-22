@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Counter with Local Storage</title>
+  
+</head>
+<body>
+    <script type ="text/javascript">
+        function localValue(){
+            if(typeof(Storage) !== "undefined"){
+                if(localStorage.name){
+                    alert("name is already set in local storage")
+                }
+            }
+            else{
+                alert("sorry your browser does not support web storage")
+            }
+            localStorage.setItem("name","Swapnil");
+            localStorage.setItem("age","21");
+            localStorage.setItem("city","london");
+            alert("local storage values are set")
+        }
+    </script>
+
+    <h2>Click Counter using Local Storage</h2>
+    <button onclick="localValue()">Set Local Storage Values</button>
+    <p id="result">Click the button to set local storage values.</p>
+</body>
+</html>

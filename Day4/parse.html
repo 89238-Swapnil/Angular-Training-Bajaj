@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Object & JSON Example</title>
+  <script>
+    
+    var record = '{"employees":[{"firstName":"John","lastName":"Doe"},{"firstName":"Anna","lastName":"Smith"},{"firstName":"Peter","lastName":"Jones"}]}';
+    console.log("Type of record:", typeof record);
+
+    const obj = JSON.parse(record);
+    console.log("Type of obj:", typeof obj);
+    console.log("Parsed object:", obj);
+
+    const employees = obj.employees;
+
+    employees.forEach((employee, index) => {
+      console.log(`Employee ${index + 1}:`);
+      for (const key in employee) {
+        console.log(` ${key}: ${employee[key]}`);
+        const letters = employee[key];
+        for (let i = 0; i < letters.length; i++) {
+          console.log(`  Letter ${i + 1}: ${letters[i]}`);
+        }
+      }
+    });
+
+    
+    function fetchJsonData() {
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then(response => response.json())
+        .then(data => {
+          console.log("Fetched JSON data:", data);
+
+          // Example: print title letters of first 3 todos
+          data.slice(0, 3).forEach((todo, index) => {
+            console.log(`Todo ${index + 1} title: ${todo.title}`);
+            for (let i = 0; i < todo.title.length; i++) {
+              console.log(`  Letter ${i + 1}: ${todo.title[i]}`);
+            }
+          });
+        })
+        .catch(error => console.error("Error fetching JSON:", error));
+    }
+
+    // Call fetch function
+    fetchJsonData();
+
+    // --- Another JS object example ---
+    var record2 = { "name": "John", "age": 30, "city": "New York" };
+    console.log("record2
+    cord2);
+    console.log("Name from record2:", record2.name);
+
+    var jsonString = JSON.stringify(record2);
+    console.log("JSON String:", jsonString);
+
+    const myObject = JSON.parse(jsonString);
+    console.log("Parsed object:", myObject);
+    console.log("Name from parsed object:", myObject.name);
+  </script>
+</head>
+<body>
+  <h1>Check the console for JS object and JSON output</h1>
+</body>
+</html>

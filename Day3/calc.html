@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input[type="number"] {
+      width: 100px;
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    input[readonly] {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+
+  <input type="number" id="value1" placeholder="Value 1">
+  <input type="number" id="value2" placeholder="Value 2">
+  <br>
+
+  <button onclick="calculate('add')">+</button>
+  <button onclick="calculate('subtract')">-</button>
+  <button onclick="calculate('multiply')">×</button>
+  <button onclick="calculate('divide')">÷</button>
+  <br>
+
+  <input type="number" id="result" placeholder="Result" readonly>
+
+  <script>
+    function calculate(operator) {
+      let val1 = parseFloat(document.getElementById('value1').value);
+      let val2 = parseFloat(document.getElementById('value2').value);
+      let result;
+
+      if (isNaN(val1) || isNaN(val2)) {
+        alert("Please enter valid numbers");
+        return;
+      }
+
+      if (operator === 'add') {
+        result = val1 + val2;
+      } else if (operator === 'subtract') {
+        result = val1 - val2;
+      } else if (operator === 'multiply') {
+        result = val1 * val2;
+      } else if (operator === 'divide') {
+        result = val1 / val2;
+      }
+
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>

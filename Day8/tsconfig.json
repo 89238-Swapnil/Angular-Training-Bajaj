@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // Target modern JavaScript
+    "target": "ES2015",         
+
+    // Module system for Node.js
+    "module": "CommonJS",       
+
+    // Include modern JS and DOM APIs
+    "lib": ["ES2015", "DOM"],   
+
+    // Enable strict type checking
+    "strict": true,            
+
+    // Allow import/export interoperability with CommonJS
+    "esModuleInterop": true,   
+
+    // Skip type checking for libraries
+    "skipLibCheck": true,      
+
+    // Include source maps
+    "sourceMap": true,         
+
+    // Generate declaration files
+    "declaration": true,       
+    "declarationMap": true,    
+
+    // Safety options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Module resolution and detection
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "moduleDetection": "force"
+  }
+}

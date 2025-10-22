@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide and Seek Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #2d3436;
+    }
+
+    img.character {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    img.character:hover {
+      opacity: 0;
+      transform: scale(0);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hide and Seek Game</h1>
+  <p>Move your mouse over the image </p>
+
+  <img class="character" src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Character">
+
+</body>
+</html>

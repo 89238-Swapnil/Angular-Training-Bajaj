@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                        // Modern JS target
+    "module": "ESNext",                        // Use ES modules
+    "moduleResolution": "Node",                // Node-style resolution
+    "rootDir": "./src",                         // Source folder
+    "outDir": "./dist",                         // Compiled JS output
+    "strict": true,                             // Enable all strict checks
+    "esModuleInterop": true,                    // Allow default imports from CJS modules
+    "allowSyntheticDefaultImports": true,       // Allow default imports
+    "skipLibCheck": true,                        // Skip type checking of libs
+    "isolatedModules": true,                     // Required for ts-node ESM
+    "allowImportingTsExtensions": true,          // Allow imports ending with .ts
+    "noEmit": true                               // Disable emitting JS (required for allowImportingTsExtensions)
+  },
+  "include": ["src/**/*"]                        // Include all TS files in src
+}

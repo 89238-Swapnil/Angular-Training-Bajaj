@@ -1,0 +1,28 @@
+// Sass Mixins 
+// Button mixin
+@mixin button($bg-color: #3498db, $text-color: white, $padding: 10px 20px)
+    background-color: $bg-color
+    color: $text-color
+    padding: $padding
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    transition: background-color 0.3s ease
+
+    &:hover
+        background-color: darken($bg-color, 10%)
+
+// Card mixin
+@mixin card($shadow: 0 4px 8px rgba(0,0,0,0.1))
+    background-color: white
+    border-radius: 8px
+    box-shadow: $shadow
+    padding: 20px
+    margin: 10px
+
+// Flex center mixin
+@mixin flex-center($direction: row)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: $direction

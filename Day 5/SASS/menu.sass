@@ -1,0 +1,36 @@
+
+$bg-color: #3498db
+$text-color: white
+$hover-color: #2980b9
+$font-stack: 'Poppins', sans-serif
+$padding: 10px 20px
+
+body
+  font-family: $font-stack
+  background-color: #f9f9f9
+  margin: 20px
+  padding: 20px
+
+
+.text
+  font-size: 18px
+  margin-bottom: 20px
+  font-weight: bold
+
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  background-color: $bg-color
+  border-radius: 5px
+  overflow: hidden
+
+  li
+    padding: $padding
+    color: $text-color
+    cursor: pointer
+    transition: background-color 0.8s
+
+    &:hover
+      background-color: $hover-color

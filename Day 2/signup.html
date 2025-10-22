@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up & Login</title>
+
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupUsername" placeholder="Username" required>
+    <input type="number" id="signupMobile" placeholder="Mobile Number" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <button onclick="signup()">Sign Up</button>
+    <p id="signupMessage"></p>
+  </div>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Username" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <button onclick="console.log(getStoredUsers())">Get Stored Users</button>
+
+  <script type="text/javascript">
+    
+    function signup() {
+      const username = document.getElementById("signupUsername").value.trim();
+      const mobile = document.getElementById("signupMobile").value.trim();
+      const password = document.getElementById("signupPassword").value.trim();
+      const signupMsg = document.getElementById("signupMessage");
+
+      if (!username || !mobile || !password) {
+        signupMsg.style.color = "red";
+        signupMsg.innerText = "Please fill in all fields!";
+        return;
+      }
+
+      
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (users[username]) {
+        signupMsg.style.color = "red";
+        signupMsg.innerText = "Username already exists!";
+        return;
+      }
+
+      
+      users[username] = { mobile, password };
+      localStorage.setItem("users", JSON.stringify(users));
+
+      signupMsg.style.color = "green";
+      signupMsg.innerText = "Sign up successful! You can now log in.";
+
+      
+      document.getElementById("signupUsername").value = "";
+      document.getElementById("signupMobile").value = "";
+      document.getElementById("signupPassword").value = "";
+    }
+
+    
+    function login() {
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+      const loginMsg = document.getElementById("loginMessage");
+
+      if (!username || !password) {
+        loginMsg.style.color = "red";
+        loginMsg.innerText = "Please enter both username and password!";
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || {};
+
+      if (users[username] && users[username].password === password) {
+        loginMsg.style.color = "green";
+        loginMsg.innerText = `Login successful! Welcome ${username}.`;
+      } else {
+        loginMsg.style.color = "red";
+        loginMsg.innerText = "Invalid username or password!";
+      }
+
+      
+      document.getElementById("loginUsername").value = "";
+      document.getElementById("loginPassword").value = "";
+    }
+
+   
+    function getStoredUsers() {
+      return JSON.parse(localStorage.getItem("users")) || {};
+    }
+  </script>
+
+</body>
+</html>

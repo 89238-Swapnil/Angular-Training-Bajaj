@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Search</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  select, input, button { padding: 8px; margin: 5px; font-size: 14px; }
+  table { width: 70%; margin-top: 20px; border-collapse: collapse; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  th { background-color: #3498db; color: white; }
+</style>
+</head>
+<body>
+
+<h2>Employee Search</h2>
+
+<select id="employeeDropdown">
+  <option value="">-- Select Employee --</option>
+</select>
+
+<input type="text" id="searchInput" placeholder="Search employee by name">
+<button id="searchBtn">Search</button>
+
+<table id="resultTable" style="display:none;">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+let employees = []; 
+fetch('employees.json')
+  .then(res => res.json())
+  .then(data => {
+    employees = data.employees;
+
+    
+    const dropdown = document.getElementById('employeeDropdown');
+    employees.map(emp => {
+      const option = document.createElement('option');
+      option.value = emp.id;
+      option.textContent = emp.name;
+      dropdown.appendChild(option);
+    });
+  })
+  .catch(err => console.error("Error fetching data:", err));
+
+document.getElementById('searchBtn').addEventListener('click', () => {
+  const searchName = document.getElementById('searchInput').value.toLowerCase();
+  const tableBody = document.getElementById('tableBody');
+  tableBody.innerHTML = "";
+
+  const filtered = employees.filter(emp => emp.name.toLowerCase().includes(searchName));
+
+  
+  const totalSalary = filtered.reduce((acc, emp) => acc + emp.salary, 0);
+
+ 
+  filtered.forEach(emp => {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${emp.id}</td><td>${emp.name}</td><td>${emp.salary}</td>`;
+    tableBody.appendChild(row);
+  });
+
+  if(filtered.length > 0) {
+    
+    const totalRow = document.createElement('tr');
+    totalRow.innerHTML = `<td colspan="2"><strong>Total Salary</strong></td><td><strong>${totalSalary}</strong></td>`;
+    tableBody.appendChild(totalRow);
+    document.getElementById('resultTable').style.display = 'table';
+  } else {
+    tableBody.innerHTML = "<tr><td colspan='3'>No employee found</td></tr>";
+    document.getElementById('resultTable').style.display = 'table';
+  }
+});
+</script>
+
+</body>
+</html>

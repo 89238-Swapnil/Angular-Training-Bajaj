@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type "text/javascript">
+        function getLocation(){
+            alert("get location");
+            var name=prompt("Please enter your name","Harry Potter");
+            alert("My name is "+name)
+            var result = confirm("do you want to continuee...")
+            if(result){
+                alert("you pressed ok!")
+            }
+            else{
+                alert("you pressed cancel")
+            }
+            console.log("this is console log");
+        }
+
+         
+     </script></head>
+<body>
+    <p id="demo"> click the button to get your coordinates</p>
+
+    <button onclick="getLocation()">Get Location</button>
+</body>
+</html>

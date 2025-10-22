@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display</title>
+</head>
+<body>
+  <h1>Images</h1>
+
+  <div id="img"></div> 
+
+  <script type="text/javascript">
+    let images = [
+      "images/img1.jpg",
+      "images/img2.jpg",
+      "images/img3.jpg",
+      "images/img4.jpg",
+      "images/img5.jpg"
+    ];
+
+    images=[]
+    function saveImages(){
+        x=document.getElementById("imgurl").value
+        images.push(x)
+        console.log(images)
+    }
+      
+
+    images.forEach(function(image) {
+        //alert(image);
+      
+      document.getElementById("img").innerHTML += 
+        '<img src="' + image + '" width="150" style="margin:10px;">';
+    });
+  </script>
+</body>
+</html>

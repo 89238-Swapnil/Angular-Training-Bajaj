@@ -1,0 +1,102 @@
+PATTERN 1: DEFINE A GLOBAL
+
+// firstFile.js
+    foo = function () {
+      console.log('foo!');
+    }
+
+    // app.js
+    require('./firstFile.js');
+    foo();
+
+
+PATTERN 2: EXPORT AN ANONYMOUS FUNCTION
+
+
+// bar.js
+    module.exports = function () {
+      console.log('bar!');
+    }
+ 
+// app.js
+    var fun = require('./bar.js');
+    fun();
+
+
+PATTERN 3: EXPORT A NAMED FUNCTION
+
+    // first.js
+    exports.fiz = function () {
+      console.log('fiz!');
+    }
+ 
+// app.js
+    var FOO = require('./first.js').fiz;
+    FOO();
+
+
+PATTERN 4: EXPORT AN ANONYMOUS OBJECT
+
+
+  // firstFile.js
+    var Buz = function () {};
+    Buz.prototype.myLog = function () {
+      console.log('buz!');
+    };
+    module.exports = new Buz();
+
+  // app.js
+    var fun = require('./firstFile.js');
+    fun.myLog();
+
+PATTERN 5: EXPORT A NAMED OBJECT
+
+
+
+ // firstFile.js
+    var Baz = function () {};
+    Baz.prototype.log = function () {
+      console.log('baz!');
+    };
+
+    exports.Baz = new Baz();
+
+    // app.js
+    var fun = require('./firstFile.js').Baz;
+    fun.log();
+
+PATTERN 6: EXPORT AN ANONYMOUS PROTOTYPE
+
+
+ // firstFile.js
+    var Doo = function () {};
+    Doo.prototype.log = function () {
+        console.log('doo!');
+    }
+    module.exports = Doo;
+
+// app.js
+    var Doo = require('./firstFile.js');
+    var doo = new Doo();
+    doo.log();
+
+
+PATTERN 7: EXPORT A NAMED PROTOTYPE
+// firstFile.js
+    var Qux = function () {};
+    Qux.prototype.log = function () {
+      console.log('baz!');
+    };
+    exports.Qux = Qux;
+
+
+// app.js
+    var Qux = require('./firstFile.js').Qux;
+    var qux = new Qux();
+    qux.log();
+
+
+
+
+
+

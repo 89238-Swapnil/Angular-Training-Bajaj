@@ -1,0 +1,92 @@
+
+// Mixins for reusable styles
+
+// Button mixin
+@mixin button($bg-color: #3498db, $text-color: white, $padding: 10px 20px)
+    background-color: $bg-color
+    color: $text-color
+    padding: $padding
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    transition: background-color 0.3s ease
+    text-decoration: none
+    display: inline-block
+    text-align: center
+
+    &:hover
+        background-color: darken($bg-color, 10%)
+
+// Card mixin
+@mixin card($shadow: 0 4px 8px rgba(0,0,0,0.1), $border-radius: 8px)
+    background-color: white
+    border-radius: $border-radius
+    box-shadow: $shadow
+    overflow: hidden
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15)
+
+// Flexbox center mixin
+@mixin flex-center($direction: row)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: $direction
+
+// Text mixin
+@mixin text($size: 16px, $weight: normal, $color: #333)
+    font-size: $size
+    font-weight: $weight
+    color: $color
+    line-height: 1.5
+
+// Responsive mixin
+@mixin responsive($breakpoint)
+    @if $breakpoint == mobile
+        @media (max-width: 768px)
+            @content
+    @else if $breakpoint == tablet
+        @media (max-width: 1024px)
+            @content
+    @else if $breakpoint == desktop
+        @media (min-width: 1025px)
+            @content
+
+// Usage examples
+.primary-btn
+    @include button(#3498db, white, 12px 24px)
+
+.secondary-btn
+    @include button(#2ecc71, white, 10px 20px)
+
+.danger-btn
+    @include button(#e74c3c, white, 10px 20px)
+
+.card-component
+    @include card()
+    padding: 20px
+    margin: 10px
+
+.centered-container
+    @include flex-center(column)
+    height: 100vh
+
+.heading-text
+    @include text(24px, bold, #2c3e50)
+
+.body-text
+    @include text(16px, normal, #34495e)
+
+// Responsive usage
+.container
+    width: 100%
+    padding: 20px
+    
+    @include responsive(mobile)
+        padding: 10px
+    
+    @include responsive(tablet)
+        padding: 15px

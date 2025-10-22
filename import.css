@@ -1,0 +1,8 @@
+@import "extra.css";  /* imports another CSS file */
+
+div {
+  color: blue;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 50px;
+}

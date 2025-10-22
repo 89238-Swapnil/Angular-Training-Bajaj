@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinned Sticky Notes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #d1b897;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    h1 {
+      color: #3e2723;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #4e342e;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 180px);
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .note {
+      position: relative;
+      height: 180px;
+      width: 180px;
+      padding: 15px;
+      background: #ffeb3b;
+      box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+      transform: rotate(-2deg);
+      cursor: text;
+      color: #2d3436;
+      font-size: 15px;
+      font-weight: 500;
+      outline: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .note:hover {
+      transform: scale(1.05) rotate(0deg);
+      box-shadow: 6px 10px 15px rgba(0, 0, 0, 0.4);
+    }
+
+ 
+    .note::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 30% 30%, #ff0000, #b71c1c);
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+   
+    .b1 { background: #ffadad; transform: rotate(2deg); }
+    .b2 { background: #49b534; transform: rotate(-3deg); }
+    .b3 { background: #fdffb6; transform: rotate(1deg); }
+    .b4 { background: #caffbf; transform: rotate(-2deg); }
+    .b5 { background: #9bf6ff; transform: rotate(3deg); }
+    .b6 { background: #a0c4ff; transform: rotate(-1deg); }
+    .b7 { background: #bdb2ff; transform: rotate(2deg); }
+    .b8 { background: #ffc6ff; transform: rotate(-3deg); }
+
+  </style>
+</head>
+<body>
+
+  <h1>🧷 Sticky Notes Wall</h1>
+  <p>Click on any note to edit. Each note looks like it's pinned to a corkboard!</p>
+
+  <div class="container">
+    <div class="note b1" contenteditable="true">Buy groceries</div>
+    <div class="note b2" contenteditable="true">Call mom</div>
+    <div class="note b3" contenteditable="true">Study for exam</div>
+    <div class="note b4" contenteditable="true">Project deadline</div>
+    <div class="note b5" contenteditable="true">Meeting 4PM</div>
+    <div class="note b6" contenteditable="true">Plan weekend</div>
+    <div class="note b7" contenteditable="true">Pay bills</div>
+    <div class="note b8" contenteditable="true">Workout goals</div>
+  </div>
+
+</body>
+</html>
